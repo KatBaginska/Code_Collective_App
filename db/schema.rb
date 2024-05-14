@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< seed_database_setup
 ActiveRecord::Schema[7.1].define(version: 2024_05_14_120923) do
+=======
+
+ActiveRecord::Schema[7.1].define(version: 2024_05_14_115400) do
+>>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,7 +80,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_120923) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< seed_database_setup
     t.string "username"
+=======
+>>>>>>> master
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true

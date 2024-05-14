@@ -97,3 +97,4 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 event.save
 
 puts "Created #{Event.count} events"
+
