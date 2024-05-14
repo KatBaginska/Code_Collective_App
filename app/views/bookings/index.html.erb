@@ -1,1 +1,12 @@
-<h1>Hello World</h1>
+<div class="card-container">
+  <% @bookings.each do |booking| %>
+    <div class="booking-card">
+      <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "hero" %>
+      <div class="card-details">
+        <p><%= link_to booking.event.name, booking_path(booking) %></p>
+        <p><%= booking.event.location %></p>
+        <p><%= booking.event.date.strftime("%d/%m/%Y") %> | <%= booking.event.start_time.strftime("%H:%M %p") %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

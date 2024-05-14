@@ -1,14 +1,45 @@
 <div class="container mt-5">
-  <h1><%= @event.name %></h1>
-
-  <div class="event-details mt-4">
-    <p><%= @event.description %></p>
-    <p><%= @event.location %></p>
-    <p><%= @event.date %> | <%= @event.start_time %> - <%= @event.end_time %></p>
-    <% if @event.image_url.present? %>
-      <%= image_tag @event.image_url.url, class: "img-fluid rounded" %>
-    <% end %>
+  <div class="title-container">
+    <h1><%= @event.name %></h1>
+    <div class="back-to-container">
+  <%= link_to "Back to events", events_path, class: "btn btn-secondary" %>
   </div>
-
-  <%= link_to 'Back to Events', events_path, class: "btn btn-secondary mt-4" %>
+  </div>
+    <div class="event-details-card">
+      <% if @event.photos.present? %>
+        <div class="image-container">
+          <div class="main-image">
+            <%= cl_image_tag @event.photos[0].key, height: 400, crop: :fill, class: "hero" %>
+          </div>
+          <div class="gallery">
+            <% unless @event.photos.count == 1 %>
+              <% @event.photos.each_with_index do |photo, index| %>
+                <% next if index == 0 %>
+                <%= cl_image_tag photo.key, height: 196, width: 250, crop: :fill %>
+              <% end %>
+            <% end %>
+      <% else %>
+        <%= "No photo available" %>
+      <% end %>
+          </div>
+       </div>
+    <div class="details-container">
+      <div class="details">
+        <p><%= @event.description %></p>
+        <p>Location: <%= @event.location %></p>
+        <br>
+        <p>Keywords: #<%= "#{@event.keywords}" %></p>
+        <br>
+        <p>Hosted by <%= "#{@event.user.username}" %></p>
+        <hr>
+        <p>Date: <%= @event.date.strftime("%B %d %Y") %></p>
+        <p>Start time: <%= @event.start_time.strftime("%H:%M") %>pm</p>
+        <p>End time: <%= @event.end_time.strftime("%H:%M") %>pm</p>
+        <hr>
+      </div>
+      <div class="button-container">
+        <%= link_to "Book", new_booking_path(@event), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
