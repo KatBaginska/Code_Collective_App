@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   # User - logged in
   resources :events
-  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy, :new]
   resources :user, only: [:show]
 end
