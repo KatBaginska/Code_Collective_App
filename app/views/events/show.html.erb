@@ -1,2 +1,14 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="container mt-5">
+  <h1><%= @event.name %></h1>
+
+  <div class="event-details mt-4">
+    <p><%= @event.description %></p>
+    <p><%= @event.location %></p>
+    <p><%= @event.date %> | <%= @event.start_time %> - <%= @event.end_time %></p>
+    <% if @event.image_url.present? %>
+      <%= image_tag @event.image_url.url, class: "img-fluid rounded" %>
+    <% end %>
+  </div>
+
+  <%= link_to 'Back to Events', events_path, class: "btn btn-secondary mt-4" %>
+</div>

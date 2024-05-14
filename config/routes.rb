@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # Visitor
   resources :events, only: [:index, :show]
 
+
   # User - logged in
   resources :events
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
