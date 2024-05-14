@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :events
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :username, presence: true
   validates :email, :password, presence: true
 
   devise :database_authenticatable, :registerable,
