@@ -1,0 +1,5 @@
+<%= link_to "Return to Bookings", bookings_path %>
+<div>
+  <%= cl_image_tag @booking.event.photos[0].key, height: 400, crop: :fill, class: "hero" %>
+  <h1><%= @booking.event.name %></h1>
+</div>
