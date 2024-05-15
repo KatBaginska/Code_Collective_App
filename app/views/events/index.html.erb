@@ -4,7 +4,7 @@
     <div class="search-container d-flex justify-content-center align-items-center">
       <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
         <div class="form-group mb-0">
-          <%= text_field_tag :search, params[:search], placeholder: "Search events...", class: "form-control" %>
+          <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control" %>
         </div>
         <div class="form-group mb-0 ml-2">
           <%= submit_tag "Search", class: "btn btn-primary" %>
@@ -20,7 +20,7 @@
     <div class="cards">
       <% @events.each do |event| %>
         <div class="card event-card">
-          <%= image_tag event.image_url.url, class: "card-img-top" if event.image_url.present? %>
+          <%= image_tag event.photos[0].url, class: "card-img-top" if event.photos.attached? %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
             <p class="card-text"><strong>Description:</strong> <%= event.description %></p>
