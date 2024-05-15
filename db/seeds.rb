@@ -36,7 +36,7 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
-file = URI.open("https://lh3.googleusercontent.com/proxy/KqyQU9CwrbewnKZJGWXywIZWSghMU02BS5jdCYuYWoZ_DM-O6jiYh-5uOKR74ptFD64uBryo4s4BTBEm0IRp1140EY7QaIthIA0qleelUVGntPf6x7kE8OuK")
+file = URI.open("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F719372359%2F269598256309%2F1%2Foriginal.20240314-122707?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C164%2C2000%2C1000&s=436a5355b1ea6b4ed21ad0c644c7bc99")
 file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
 
 event = Event.new(name: "An Evening of Python Coding",
@@ -108,4 +108,3 @@ booking = Booking.create(event: event3, user: kat, confirmed: [true, false].samp
 booking.save
 
 puts "Created #{Booking.count} bookings"
-
