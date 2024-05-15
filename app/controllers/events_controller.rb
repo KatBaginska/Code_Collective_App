@@ -2,7 +2,11 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_by_details(params[:query])
+    else
+      @events = Event.all
+    end
     authorize @events
   end
 
@@ -51,6 +55,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :date, :start_time, :end_time, photos: [])
+    params.require(:event).permit(:name, :description, :location, :date, :start_time, :end_time, :keywords, photos: [])
   end
 end
