@@ -1,2 +1,24 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+
+<div class= "container mt-5">
+  <h1>Events</h1>
+    <div class="add-event-button">
+      <%= link_to "Add an event", new_event_path, class: "btn btn-primary" %>
+    </div>
+  <div class= "list-group mt-4" >
+    <div class= "cards">
+      <% @events.each do |event| %>
+        <li class=“list-group-item”>
+          <h5>
+            <%= link_to event.name, event_path(event), class: "event-link" %>
+          </h5>
+          <p><%= event.description %></p>
+          <p><%= event.location %></p>
+          <p><%= event.date %> | <%= event.start_time %> - <%= event.end_time %></p>
+          <% if event.image_url.present? %>
+            <%= image_tag event.image_url.url, class: "img-fluid rounded" %>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
