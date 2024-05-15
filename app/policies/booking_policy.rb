@@ -1,4 +1,4 @@
-class BookingsPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   # NOTE: Up to Pundit v2.3.1, the inheritance was declared as
   # `Scope < Scope` rather than `Scope < ApplicationPolicy::Scope`.
   # In most cases the behavior will be identical, but if updating existing
@@ -10,5 +10,25 @@ class BookingsPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+  end
+
+  def index?
+    user.present?
+  end
+
+  def show?
+    user.present? && record.user == user
+  end
+
+  def new?
+    create?
+  end
+
+  def create?
+    user.present?
+  end
+
+  def destroy
+    user.present? && record.user == user
   end
 end

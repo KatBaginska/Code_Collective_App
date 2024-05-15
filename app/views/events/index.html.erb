@@ -1,26 +1,34 @@
-<div class="banner" style="background-image: url(./img/event_banner.png); margin-bottom: 20px;">
-  <div class="container text-center">
-    <h2 class="search-title">Find Your New Event</h2>
-    <div class="search-container d-flex justify-content-center align-items-center">
-      <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
-        <div class="form-group mb-0">
-          <%= text_field_tag :search, params[:search], placeholder: "Search events...", class: "form-control" %>
-        </div>
-        <div class="form-group mb-0 ml-2">
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-        </div>
-      <% end %>
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1547190027-9156686aa2f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); margin-bottom: 20px;">
+  <div class="container h-100">
+    <div class="row align-items-center justify-content-center h-100">
+      <div class="col-lg-6 text-center">
+          <h2 class="search-title">Find Your New Event</h2>
+          <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
+            <div class="form-group mb-0">
+              <%= text_field_tag :search, params[:search], placeholder: "Search events...", class: "form-control" %>
+            </div>
+            <div class="form-group mb-0 ml-2">
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
 
+
 <div class="container mt-5">
-  <h2>Upcoming Events</h2>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">Upcoming Events</h2>
+    <% if policy(Event).new? %>
+      <%= link_to 'New Event', new_event_path,  class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div class="cards-events mt-3">
     <div class="cards">
       <% @events.each do |event| %>
         <div class="card event-card">
-          <%= image_tag event.image_url.url, class: "card-img-top" if event.image_url.present? %>
+          <%= cl_image_tag event.photos.first.key, class: "castle-image" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
             <p class="card-text"><strong>Description:</strong> <%= event.description %></p>

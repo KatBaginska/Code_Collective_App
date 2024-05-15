@@ -1,0 +1,6 @@
+<h1><%= @booking.event.name %></h1>
+<p><%= @booking.event.date.strftime("%d/%m/%Y") %> | <%= @booking.event.start_time.strftime("%H:%m") %></p>
+<%= simple_form_for(@booking, url: event_bookings_path(@booking.event)) do |f| %>
+  <%= f.input :confirmed %>
+  <%= f.submit "List", class: "btn btn-primary" %>
+<% end %>

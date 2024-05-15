@@ -21,6 +21,18 @@ class EventPolicy < ApplicationPolicy
   end
 
   def new?
-    record.user == user
+    create?
+  end
+
+  def create?
+    user.present?
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    user.present? && record.user == user
   end
 end

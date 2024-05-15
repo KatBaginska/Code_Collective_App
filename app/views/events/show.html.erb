@@ -38,7 +38,14 @@
         <hr>
       </div>
       <div class="button-container">
-        <%= link_to "Book", new_booking_path(@event), class: "btn btn-primary" %>
+        <%= link_to "Book", new_event_booking_path(@event), class: "btn btn-primary" %>
+      </div>
+      <div>
+        <div>
+          <% if policy(@event).edit? %>
+            <%= link_to 'Edit Event', edit_event_path,  class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
