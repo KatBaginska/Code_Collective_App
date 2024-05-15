@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_14_120924) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_15_111418) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_120924) do
     t.string "image_url"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
