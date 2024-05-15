@@ -14,6 +14,12 @@
   </div>
 </div>
 
+<div>
+  <% if policy(Event.new).new? %>
+    <%= link_to 'New Event', new_event_path,  class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 <div class="container mt-5">
   <h2>Upcoming Events</h2>
   <div class="cards-events mt-3">
