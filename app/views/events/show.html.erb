@@ -32,7 +32,7 @@
         <br>
         <p>Hosted by <%= "#{@event.user.username}" %></p>
         <hr>
-        <p>Date: <%= @event.date.strftime("%B %d %Y") %></p>
+        <p>Date: <%= @event.date.strftime("%A %d %B %Y") %></p>
         <p>Start time: <%= @event.start_time.strftime("%H:%M") %>pm</p>
         <p>End time: <%= @event.end_time.strftime("%H:%M") %>pm</p>
         <hr>
@@ -49,4 +49,9 @@
       </div>
     </div>
   </div>
+      <div style="width: 50%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
 </div>
