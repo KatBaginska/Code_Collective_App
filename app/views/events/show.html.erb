@@ -32,7 +32,7 @@
         <br>
         <p>Hosted by <%= "#{@event.user.username}" %></p>
         <hr>
-        <p>Date: <%= @event.date.strftime("%B %d %Y") %></p>
+        <p>Date: <%= @event.date.strftime("%A %d %B %Y") %></p>
         <p>Start time: <%= @event.start_time.strftime("%H:%M") %>pm</p>
         <p>End time: <%= @event.end_time.strftime("%H:%M") %>pm</p>
         <hr>

@@ -1,3 +1,13 @@
+# This file should ensure the existence of records required to run the application in every environment (production,
+# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Example:
+#
+#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
+#     MovieGenre.find_or_create_by!(name: genre_name)
+#   end
+
 require "open-uri"
 
 puts "Cleaning up the db"
@@ -89,23 +99,3 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 event.save
 
 puts "Created #{Event.count} events"
-
-puts "Creating bookings"
-
-# Generate bookings for the first event
-event1 = Event.first
-booking = Booking.create(event: event1, user: kate, confirmed: [true, false].sample)
-booking.save
-
-# Generate bookings for the second event
-event2 = Event.second
-booking = Booking.create(event: event2, user: koni, confirmed: [true, false].sample)
-booking.save
-
-# Generate bookings for the third event
-event3 = Event.third
-booking = Booking.create(event: event3, user: kat, confirmed: [true, false].sample)
-booking.save
-
-puts "Created #{Booking.count} bookings"
-
