@@ -16,14 +16,41 @@ Event.destroy_all
 User.destroy_all
 
 puts "Creating users"
+
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1709831209/zbmwwz2glonos4sxxgut.jpg")
 kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456")
+kate.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://avatars.githubusercontent.com/u/137444157?v=4")
 kat = User.create(username: "Kat", email: "kat@gmail.com", first_name: "Kat", last_name: "Baginska", password: "123456")
+kat.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://avatars.githubusercontent.com/u/162709529?v=4")
 koni = User.create(username: "Koni", email: "koni@gmail.com", first_name: "Koni", last_name: "Borowiak", password: "123456")
+koni.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1711361107/s6tpxcvqkupt4j7dndze.jpg")
 alper = User.create(username: "Alper", email: "alper@gmail.com", first_name: "Alper", last_name: "Goldenberg", password: "123456")
+alper.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://pbs.twimg.com/profile_images/1258007290940022784/OGFVpWLz_400x400.png")
 codebar = User.create(username: "Codebar", email: "codebar@codebar.com", first_name: "Codebar", last_name: "ltd", password: "123456")
-womenrock = User.create(username: "Womenrock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456")
-thepythongroup = User.create(username: "Thepythongroup", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456")
-generalassembly = User.create(username: "Generalassembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456")
+codebar.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+
+file = URI.open("https://cdn.sourceflow.co.uk/va8vj2cd566y6ut4d2y67hnxsveg")
+womenrock = User.create(username: "Women Rock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456")
+womenrock.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://images.datacamp.com/image/upload/f_auto,q_auto:best/v1603718736/Why_Your_Company_Needs_Python_for_Business_Analytics_xzzles.png")
+thepythongroup = User.create(username: "The Python Group", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456")
+thepythongroup.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+
+file = URI.open("https://www.pngitem.com/pimgs/m/20-207776_transparent-general-assembly-logo-hd-png-download.png")
+generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456")
+generalassembly.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+
+
+puts "Created #{User.count} users"
 
 
 puts "Creating events"
@@ -37,7 +64,7 @@ event = Event.new(name: "Introduction to User Experience Design",
   date: Date.new(2024, 8, 2),
   start_time: DateTime.new(2024, 8, 2, 18),
   end_time: DateTime.new(2024, 8, 2, 20),
-  location: "Fuel Studios, Kiln House, Pottergate, Norwich, NR2 1DX",
+  location: "Kiln House, Norwich, NR2 1DX",
   user: codebar,
   keywords: "UX design, Web development, User experience"
 )
@@ -46,7 +73,7 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
-file = URI.open("https://lh3.googleusercontent.com/proxy/KqyQU9CwrbewnKZJGWXywIZWSghMU02BS5jdCYuYWoZ_DM-O6jiYh-5uOKR74ptFD64uBryo4s4BTBEm0IRp1140EY7QaIthIA0qleelUVGntPf6x7kE8OuK")
+file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
 file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
 
 event = Event.new(name: "An Evening of Python Coding",
@@ -71,7 +98,7 @@ event = Event.new(name: "Coding Workshop at SR2",
   date: Date.new(2024, 6, 6),
   start_time: DateTime.new(2024, 6, 6, 18),
   end_time: DateTime.new(2024, 6, 6, 21),
-  location: "SR2, Runway East, 1 Victoria Street, Bristol, BS1 6AA",
+  location: "1 Victoria Street, Bristol, BS1 6AA",
   user: womenrock,
   keywords: "coding, programming, Women in tech"
 )
@@ -92,6 +119,40 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   location: "Margaret Powell House, Midsummer Boulevard, Milton Keynes, MK9 3BN",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
+)
+event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+# file = URI.open("https://secure.meetupstatic.com/photos/event/a/7/d/1/600_518682961.webp?w=384")
+file = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-to-learn-how-to-code-for-free.jpg")
+
+event = Event.new(name: "Coffee & Code - Saturday",
+  description: "Bring your laptop, get a brew and start working on your project in good company. This is an event for Saturday morning early-birds who like a productive and social start to the weekend. Please note this is a general-purpose tech meet-up. Feel free to join, if you are:- Working on a project / learning about a topic that is tech or tech-adjacent- Keen on getting help / input from, or just socialising with other tech-folk. Nice and respectful of everyone present, regardless of background, chosen tech-stack or current skill-level.",
+  date: Date.new(2024, 6, 22),
+  start_time: DateTime.new(2024, 6, 22, 9),
+  end_time: DateTime.new(2024, 7, 19, 11),
+  location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
+  user: kate,
+  keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
+)
+event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+file = URI.open("https://us.v-cdn.net/6036147/uploads/S78M2IL9SK3Z/1-1200x675.jpg")
+file_1 = URI.open("https://media.sciencephoto.com/f0/33/49/96/f0334996-800px-wm.jpg")
+
+event = Event.new(name: "Ruby & Brunch",
+  description: "Whether you are a complete novice or a programming master there is always more to learn. With Ruby & Brunch you can read that great programming book, work on that revolutionary project, or learn that cool new language with good food, a drink and fellow programmers to talk through ideas. We range from Ruby users through to HTML, CSS and JavaScript, whatever you want to talk about we are here to connect with you.",
+  date: Date.new(2024, 6, 22),
+  start_time: DateTime.new(2024, 6, 22, 9),
+  end_time: DateTime.new(2024, 7, 19, 11),
+  location: "Thrive, 5-7 Norfolk Street, Cambridge, CB1 2LB",
+  user: koni,
+  keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
