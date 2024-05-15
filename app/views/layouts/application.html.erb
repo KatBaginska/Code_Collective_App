@@ -10,11 +10,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <%= javascript_importmap_tags %>
+    <script type="module" src="application.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="content">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <br>
+      <main>
+        <%= yield %>
+      </main>
+      <br>
+    </div>
   </body>
+  <%= render "shared/footer" %>
 </html>
