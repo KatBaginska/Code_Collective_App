@@ -73,6 +73,11 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
+Booking.create(
+  event: event,
+  user: kate
+)
+
 file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
 
 file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
@@ -162,5 +167,5 @@ event.save
 
 puts "Created #{Event.count} events"
 
-puts "Created #{Booking.count} bookings"
 
+puts "Created #{Booking.count} bookings"

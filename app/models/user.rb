@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :events
   has_one_attached :photo
+  has_many :messages
 
   validates :first_name, :last_name, :username, presence: true
   validates :email, :password, presence: true
