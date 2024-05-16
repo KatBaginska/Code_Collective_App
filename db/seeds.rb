@@ -75,7 +75,13 @@ event.save
 
 Booking.create(
   event: event,
+  number_of_tickets: 1,
   user: kate
+)
+
+Chatroom.create(
+  event_id: 1,
+  name: event.name
 )
 
 file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
