@@ -3,6 +3,7 @@
 <p><strong>ID:</strong> <%= @booking.id %></p>
 <p><strong>User:</strong> <%= @booking.user.email %></p>
 <p><strong>Event:</strong> <%= @booking.event.name %></p>
+<p><strong>Tickets:</strong> <%= @booking.number_of_tickets %></p>
 <p><strong>Confirmed:</strong> <%= @booking.confirmed ? 'Yes' : 'No' %></p>
 
 <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-primary" %>
