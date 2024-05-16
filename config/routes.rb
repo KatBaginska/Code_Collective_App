@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   resources :events do
     resources :bookings
+    resources :chatrooms, only: :show
   end
 
   resources :bookings
   resources :user, only: [:show]
+
 end

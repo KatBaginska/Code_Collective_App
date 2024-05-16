@@ -54,4 +54,7 @@
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+        <% if current_user.bookings.where(event: @event) %>
+          <%= link_to "chat to others", event_chatroom_path(@event) %>
+        <% end %>
 </div>
