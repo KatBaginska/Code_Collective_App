@@ -14,8 +14,17 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       </div>
     <% end %>
+
+    </div>
   </div>
+    <div class="tags-bar mt-3 mb-3 text-center">
+      <% Event.tag_counts_on(:tags).each do |tag| %>
+        <%= link_to tag.name, events_path(tag: tag.name), class: "btn btn-outline-primary tag-button mx-1" %>
+      <% end %>
+    </div>
 </div>
+
+
 
 <div class="content-container" data-target="scroll.container">
   <div class="d-flex justify-content-between align-items-center">
@@ -29,7 +38,7 @@
     <% @events.each do |event| %>
       <div class="col mb-4">
         <div class="card event-card">
-          <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" %>
+          <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" if event.photos.attached? %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
             <p class="card-text"><strong>Location:</strong> <%= event.location %></p>

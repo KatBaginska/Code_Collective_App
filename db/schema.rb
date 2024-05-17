@@ -108,6 +108,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_134533) do
     t.datetime "updated_at", null: false
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
@@ -144,5 +145,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_134533) do
   add_foreign_key "taggings", "tags"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-
 end
