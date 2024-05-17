@@ -5,6 +5,7 @@
     <% @chatroom.messages.each do |message| %>
       <div id="message-<%= message.id %>">
         <small>
+          <%= cl_image_tag message.user.photo.key, class: "avatar" %>
           <strong><%= message.user.username %></strong>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
