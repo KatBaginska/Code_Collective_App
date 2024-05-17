@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   include PgSearch::Model
+  acts_as_taggable_on :tags
 
   pg_search_scope :search_by_details,
     against: [:name, :description, :keywords, :location],
