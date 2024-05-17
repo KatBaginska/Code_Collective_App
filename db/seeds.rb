@@ -72,6 +72,7 @@ event = Event.new(name: "Introduction to User Experience Design",
   user: codebar,
   keywords: "UX design, Web development, User experience"
 )
+event.tag_list.add("UX design", "Web development", "User experience")
 event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
@@ -117,6 +118,7 @@ event = Event.new(name: "An Evening of Python Coding",
   user: thepythongroup,
   keywords: "Python, Web development"
 )
+event.tag_list.add("Python", "Web development")
 event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
@@ -134,6 +136,7 @@ event = Event.new(name: "Coding Workshop at SR2",
   user: womenrock,
   keywords: "coding, programming, Women in tech"
 )
+event.tag_list.add("coding", "programming", "Women in tech")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
@@ -152,6 +155,7 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
 )
+event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
@@ -169,7 +173,8 @@ event = Event.new(name: "Coffee & Code - Saturday",
   user: kate,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
-event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+event5.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
+event5.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
@@ -186,12 +191,12 @@ event = Event.new(name: "Ruby & Brunch",
   user: koni,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
+event.tag_list.add("connect in person", "HTML", "CSS", "JavaScript", "Ruby", "Ruby on rails", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
 puts "Created #{Event.count} events"
-
 
 puts "Created #{Booking.count} bookings"
