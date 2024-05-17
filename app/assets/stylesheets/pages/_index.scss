@@ -7,6 +7,15 @@
   box-sizing: border-box;
 }
 
+p{
+  color: white;
+}
+
+h2{
+  color: white;
+  font-size: 70px;
+  font-weight: 900;
+}
 .row{
   background-color: #1e1e1e;
 }
@@ -80,6 +89,24 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  flex-direction: column;
+}
+
+.large-search-input {
+  width: 1120px;
+  height: 40px;
+  font-size: 16px; /* Optional: to make the text size larger */
+}
+
+.tag-button-white {
+  background-color: white;   /* Set background to white */
+  color: darkgreen;              /* Set text color to black or another visible color */
+  border-color: white;       /* Set border color to white */
+}
+
+.tag-button-white:hover {
+  background-color: darkgreen;
+  border: #00ff41;
 }
 
 .content-container {

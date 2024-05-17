@@ -2,15 +2,14 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @events = Event.all
     @tags = ActsAsTaggableOn::Tagging.where(taggable_type: "Event").map { |tagging| tagging.tag }.uniq
     @events = Event.tagged_with(params[:tag]) if params[:tag].present? && params[:tags] != [""]
     @events = Event.search_by_details(params[:query]) if params[:query].present? && params[:query] != [""]
 
     #authorize @events
   end
-
-
-
+  
   def show
     @event = Event.find(params[:id])
     @chatroom = @event.chatroom

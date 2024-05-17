@@ -8,13 +8,19 @@
     <h2 class="search-title">Find Your New Event</h2>
       <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
       <div class="form-group mb-0">
-        <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control" %>
+        <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control large-search-input" %>
       </div>
       <div class="form-group mb-0">
         <%= submit_tag "Search", class: "btn btn-primary" %>
       </div>
     <% end %>
+    <div class="tags-bar mt-3 mb-3 text-center" id="tags-green">
+    <% Event.tag_counts_on(:tags).each do |tag| %>
+      <%= link_to tag.name, events_path(tag: tag.name), class: "btn btn-outline-primary btn tag-button-white mx-1" %>
+    <% end %>
+    </div>
   </div>
+
 </div>
 
 <div class="content-container" data-target="scroll.container">

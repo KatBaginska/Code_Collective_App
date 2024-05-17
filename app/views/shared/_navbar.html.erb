@@ -6,6 +6,7 @@
 
     <%# <button class="navbar-toggler" type="button" data-action="click->sidebar#toggle" aria-label="Toggle sidebar">
       <span class="navbar-toggler-icon"> %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
         <i class="fas fa-bars fa-2xl text-white" id="burger-menu" data-action="click->sidebar#toggle"></i>
       <%# </span>
     </button> %>
