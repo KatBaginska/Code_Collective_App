@@ -1,24 +1,24 @@
-<div class="container mt-5">
+<div class="container mt-5 d-flex justify-content-center align-items-center">
   <%= simple_form_for [@event, @booking] do |f| %>
-    <h1>Book <%= @event.name %></h1> <!-- Display the event title as the form title -->
-
+    <h1> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Book: <%= @event.name %></h1>
+    <br>
     <div class="form-input">
-        <%= f.label :first_name %>
+        <%= f.label :first_name, class: "bold-label" %>
         <p><%= current_user.first_name %></p>
       </div>
 
       <div class="form-input">
-        <%= f.label :email %>
+        <%= f.label :email, class: "bold-label" %>
         <p><%= current_user.email %></p>
       </div>
 
       <div class="form-input">
-        <%= f.label :number_of_tickets %>
+        <%= f.label :number_of_tickets, class: "bold-label" %>
         <%= f.number_field :number_of_tickets, min: 1, value: 1 %>
       </div>
-
-    <!-- Additional form inputs -->
-
+      <br>
+      <br>
     <%= f.button :submit, "Book Event",  class: "btn btn-primary"  %>
+    <br>
   <% end %>
 <div>
