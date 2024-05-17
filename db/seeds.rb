@@ -49,13 +49,17 @@ file = URI.open("https://www.pngitem.com/pimgs/m/20-207776_transparent-general-a
 generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456")
 generalassembly.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
+file = URI.open("https://avatars.githubusercontent.com/u/91223087?v=4")
+ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456")
+ebi.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
 
 puts "Created #{User.count} users"
 
 
 puts "Creating events"
 file = URI.open("https://contentsquare.com/wp-content/uploads/2022/01/2022.01-User-Experience-Workshop-Blog-Image.png")
-file_1 = URI.open("https://www.lionandmason.com/wp-content/uploads/2023/01/amelie-mourichon-wusOJ-2uY6w-unsplash.jpg")
+# file_1 = URI.open("https://www.lionandmason.com/wp-content/uploads/2023/01/amelie-mourichon-wusOJ-2uY6w-unsplash.jpg")
 
 event = Event.new(name: "Introduction to User Experience Design",
   description: "Whether you've been a developer for years or are just starting out, when you are coding you make micro decisions all the time that can effect the user's experience.
@@ -68,14 +72,42 @@ event = Event.new(name: "Introduction to User Experience Design",
   user: codebar,
   keywords: "UX design, Web development, User experience"
 )
+event.tag_list.add("UX design", "Web development", "User experience")
 event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
-file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
+Booking.create(
+  event: event,
+  number_of_tickets: 1,
+  user: kate
+)
 
-file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
+Chatroom.create(
+  event_id: 1,
+  name: event.name
+)
+
+
+file = URI.open("https://www.sunset.com/wp-content/uploads/burger-at-tailgate-party-pc-thomas-barwick-getty-400x0-c-default.jpg")
+
+event = Event.new(name: "Bootstrap, Beer & BBQ!",
+  description: "Is Bootstrap getting you down? Do you need to meet people you can talk things through with, discuss projects or just have a moan over how hard coding can be? Then you are welcome to come and join us for an informal gathering of like-minded people to talk through ideas, get some tips and advice and maybe help someone out too!",
+  date: Date.new(2024, 6, 1),
+  start_time: DateTime.new(2024, 6, 1, 17),
+  end_time: DateTime.new(2024, 8, 2, 20),
+  location: "Constantine Road, London NW3 2LS",
+  user: ebi,
+  keywords: "Bootstrap, Web development, CSS, Styling"
+)
+event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+
+file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
+# file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
 
 event = Event.new(name: "An Evening of Python Coding",
   description: "Learners and complete Python novices are welcome as well as experts. If you want to start something new, please see this as an opportunity to jump start the project. If you need help with an existing coding project, bring it with you and we will have a look at it. If you want to show your complete code to someone else to test it, or if you just want to consult with python experts you are welcome.",
@@ -86,13 +118,14 @@ event = Event.new(name: "An Evening of Python Coding",
   user: thepythongroup,
   keywords: "Python, Web development"
 )
+event.tag_list.add("Python", "Web development")
 event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
 file = URI.open("https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/09/09/14/cowomen-zkhksse8tuu-unsplash-1.jpg?crop=8:5,smart&quality=75&auto=webp&width=1024")
-file_1 = URI.open("https://web-static.wrike.com/blog/content/uploads/2018/03/Women_in_Tech_Know_Their_Worth_Its_Time-Everyone_Else_Does_Too_1.jpg?av=461f21a4d35a6149d69602c26a6400d5")
+# file_1 = URI.open("https://web-static.wrike.com/blog/content/uploads/2018/03/Women_in_Tech_Know_Their_Worth_Its_Time-Everyone_Else_Does_Too_1.jpg?av=461f21a4d35a6149d69602c26a6400d5")
 
 event = Event.new(name: "Coding Workshop at SR2",
   description: "Women Rock is a voice for diversity in tech. Attend our workshops to learn programming in a safe and supportive environment at your own pace, or to share your knowledge and coach our students. Women Rock was created by SR2 co-founder and all-round positive vibe advocate Alicia and exists to help transform the industry and create a positive movement! Please join us for an in-person workshop hosted at Runway East (1 Victoria Street, Bristol, BS1 6AA) There will be someone to let you in at reception and please make your way to floor 1. The building is fully accessible. Any issues on the evening please message us on slack. Food and drink will be provided with vegan, veggie and GF options available.",
@@ -103,13 +136,14 @@ event = Event.new(name: "Coding Workshop at SR2",
   user: womenrock,
   keywords: "coding, programming, Women in tech"
 )
+event.tag_list.add("coding", "programming", "Women in tech")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
 file = URI.open("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F719372359%2F269598256309%2F1%2Foriginal.20240314-122707?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C164%2C2000%2C1000&s=436a5355b1ea6b4ed21ad0c644c7bc99")
-file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article18569554.ece/ALTERNATES/s1200/0_DSC_6284-1-copy-3.jpg")
+# file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article18569554.ece/ALTERNATES/s1200/0_DSC_6284-1-copy-3.jpg")
 
 event = Event.new(name: "Code with HTML, CSS & JavaScript",
   description: "Are you thinking about a career in Software Engineering, but don't know where to start? This free, 2-hour workshop will give you a solid understanding of what it takes to be a Web Developer, and how to write your first line of code.
@@ -121,8 +155,9 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
 )
+event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
@@ -138,13 +173,14 @@ event = Event.new(name: "Coffee & Code - Saturday",
   user: kate,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
-event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+event5.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
+event5.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 # event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
 file = URI.open("https://us.v-cdn.net/6036147/uploads/S78M2IL9SK3Z/1-1200x675.jpg")
-file_1 = URI.open("https://media.sciencephoto.com/f0/33/49/96/f0334996-800px-wm.jpg")
+# file_1 = URI.open("https://media.sciencephoto.com/f0/33/49/96/f0334996-800px-wm.jpg")
 
 event = Event.new(name: "Ruby & Brunch",
   description: "Whether you are a complete novice or a programming master there is always more to learn. With Ruby & Brunch you can read that great programming book, work on that revolutionary project, or learn that cool new language with good food, a drink and fellow programmers to talk through ideas. We range from Ruby users through to HTML, CSS and JavaScript, whatever you want to talk about we are here to connect with you.",
@@ -155,28 +191,12 @@ event = Event.new(name: "Ruby & Brunch",
   user: koni,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
+event.tag_list.add("connect in person", "HTML", "CSS", "JavaScript", "Ruby", "Ruby on rails", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+# event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
 
 puts "Created #{Event.count} events"
-
-puts "Creating bookings"
-
-# Generate bookings for the first event
-event1 = Event.first
-booking = Booking.create(event: event1, user: kate, confirmed: [true, false].sample)
-booking.save
-
-# Generate bookings for the second event
-event2 = Event.second
-booking = Booking.create(event: event2, user: koni, confirmed: [true, false].sample)
-booking.save
-
-# Generate bookings for the third event
-event3 = Event.third
-booking = Booking.create(event: event3, user: kat, confirmed: [true, false].sample)
-booking.save
 
 puts "Created #{Booking.count} bookings"

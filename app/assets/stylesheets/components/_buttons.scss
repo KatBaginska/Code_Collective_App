@@ -1,0 +1,32 @@
+.btn {
+  padding: 5px 20px;
+  font-size: 1rem;
+  border-radius: 0;
+  border: 2px solid #0FFF50;
+  background-color: transparent;
+  color: rgb(0, 149, 0);
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+
+.btn-primary {
+  background-color: transparent;
+  color: rgb(4, 163, 4);
+  border-color: rgb(4, 163, 4);
+
+  &:hover {
+    background-color: #0FFF50;
+    color: white;
+    border-color: #0FFF50;
+  }
+}
+
+.search-bar {
+  height: 40px; /* Adjust the height as needed */
+}
+
+/* Match the height of the search button with the search bar */
