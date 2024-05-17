@@ -28,7 +28,7 @@
     <div class="cards">
       <% @events.each do |event| %>
         <div class="card event-card">
-          <%= cl_image_tag event.photos.first.key, class: "castle-image" %>
+          <%= cl_image_tag event.photos.first.key, class: "event-image" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
             <p class="card-text"><strong>Description:</strong> <%= event.description %></p>

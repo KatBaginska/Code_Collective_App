@@ -27,3 +27,19 @@
 .banner .search-title {
   color: white;
 }
+
+// Events show page
+.details-container {
+  padding-left: 16px;
+}
+
+.map {
+  padding-top: 16px;
+}
+
+// bookings index page
+.bookings-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
