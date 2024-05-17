@@ -1,21 +1,57 @@
 .navbar-lewagon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   justify-content: space-between;
-  background: rgb(11, 11, 11);
+  background: transparent;
+  z-index: 999;
 }
 
 .nav-link{
-  color: white,
+  color: white;
 }
 
 .nav-link:hover {
-  color: white;
-  border: 2px #0FFF50;
-  text-decoration: none;
+  color: #ccc;
+  text-decoration: underline;
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  top: 77px;
+  right: 0px;
+  width: 250px;
+  height: 100vh;
+  background-color: #00ff41;
+  transition: left 0.3s;
+  z-index: 1000;
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+#sidebar-bits{
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+#burger-menu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+
 }

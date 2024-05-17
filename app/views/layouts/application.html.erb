@@ -12,18 +12,16 @@
     <%= javascript_importmap_tags %>
     <script type="module" src="application.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="content">
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
-      <br>
       <main>
         <%= yield %>
       </main>
-      <br>
     </div>
   </body>
   <%= render "shared/footer" %>

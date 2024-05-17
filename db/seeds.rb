@@ -151,7 +151,7 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   date: Date.new(2024, 7, 19),
   start_time: DateTime.new(2024, 7, 19, 19),
   end_time: DateTime.new(2024, 7, 19, 21),
-  location: "Margaret Powell House, Midsummer Boulevard, Milton Keynes, MK9 3BN",
+  location: "Margaret Powell House, Milton Keynes, MK9 3BN",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
 )
