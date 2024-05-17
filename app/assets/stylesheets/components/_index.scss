@@ -36,7 +36,16 @@
 }
 
 .map {
-  padding-top: 16px;
+  padding-top: 20px;
+}
+
+.details p {
+  color: rgb(165, 165, 165)
+}
+
+.title-container h1 {
+  color: rgb(165, 165, 165);
+  font-size: 25px;
 }
 
 // bookings index page
@@ -46,3 +55,31 @@
   justify-content: space-between;
 }
 
+.form-input {
+  color: rgb(165, 165, 165);
+}
+
+.new-event {
+  color: rgb(165, 165, 165);
+}
+
+.booking-name {
+  color: rgb(165, 165, 165);
+  font-size: 25px;
+}
+
+.card-details p {
+  color: rgb(165, 165, 165);
+}
+
+.your-bookings {
+  color: rgb(165, 165, 165);
+}
+
+p {
+  color: rgb(165, 165, 165);
+}
+
+.search-title {
+  color: rgb(165, 165, 165);
+}

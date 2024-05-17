@@ -1,6 +1,6 @@
 <div class="card-container container mt-5">
   <% if @bookings.any? %>
-    <h1>Your Bookings</h1>
+    <h1 class="your-bookings">Your Bookings</h1>
     <% @bookings.each do |booking| %>
       <div class="booking-card">
         <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "hero" %>

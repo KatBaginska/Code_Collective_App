@@ -1,6 +1,9 @@
 <div class="container mt-5 d-flex justify-content-center align-items-center">
+<br>
+<br>
   <%= simple_form_for [@event, @booking] do |f| %>
-    <h1> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Book: <%= @event.name %></h1>
+    <h1 class="booking-name"> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Book: <%= @event.name %></h1>
+    <%= cl_image_tag @event.photos[0].key, width: 600, height: 400, crop: :fill, class: "hero" %>
     <br>
     <div class="form-input">
         <%= f.label :first_name, class: "bold-label" %>
@@ -22,4 +25,3 @@
     <br>
   <% end %>
 <div>
-

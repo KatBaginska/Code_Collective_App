@@ -2,13 +2,15 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @tags = ActsAsTaggableOn::Tagging.where(taggable_type: "Event").map { |tagging| tagging.tag }.uniq
-    @events = Event.tagged_with(params[:tag]) if params[:tag].present? && params[:tags] != [""]
-    @events = Event.search_by_details(params[:query]) if params[:query].present? && params[:query] != [""]
-
+    if params[:query].present? || params[:tag].present?
+      @tags = ActsAsTaggableOn::Tagging.where(taggable_type: "Event").map { |tagging| tagging.tag }.uniq
+      @events = Event.tagged_with(params[:tag]) if params[:tag].present? && params[:tags] != [""]
+      @events = Event.search_by_details(params[:query]) if params[:query].present? && params[:query] != [""]
+    else
+      @events = Event.all
+    end
     #authorize @events
   end
-
 
 
   def show
