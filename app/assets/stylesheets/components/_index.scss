@@ -3,8 +3,11 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "buttons";
 @import "cards";
 @import "footer";
+@import "chatroom";
+@import "forms";
 
 
 .banner {
@@ -25,3 +28,18 @@
   color: white;
 }
 
+// Events show page
+.details-container {
+  padding-left: 16px;
+}
+
+.map {
+  padding-top: 16px;
+}
+
+// bookings index page
+.bookings-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

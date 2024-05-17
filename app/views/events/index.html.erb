@@ -2,13 +2,13 @@
 <div class="banner" style="background-image: url('https://images.unsplash.com/photo-1547190027-9156686aa2f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); margin-bottom: 20px;">
   <div class="container h-100">
     <div class="row align-items-center justify-content-center h-100">
-      <div class="col-lg-6 text-center">
+      <div class="col-lg-12 text-center">
         <h2 class="search-title">Find Your New Event</h2>
         <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
           <div class="form-group mb-0">
             <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control" %>
           </div>
-          <div class="form-group mb-0 ml-2">
+          <div class="form-group mb-0">
             <%= submit_tag "Search", class: "btn btn-primary" %>
           </div>
         <% end %>

@@ -5,3 +5,4 @@ import "@popperjs/core"
 import "bootstrap"
 
 // app/assets/javascripts/application.js
+import "@rails/actioncable"

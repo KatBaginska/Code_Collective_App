@@ -12,4 +12,5 @@ class Event < ApplicationRecord
   has_many_attached :photos
   geocoded_by :location
   after_validation :geocode
+  has_one :chatroom
 end
