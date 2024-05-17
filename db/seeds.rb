@@ -117,7 +117,7 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   date: Date.new(2024, 7, 19),
   start_time: DateTime.new(2024, 7, 19, 19),
   end_time: DateTime.new(2024, 7, 19, 21),
-  location: "Margaret Powell House, Midsummer Boulevard, Milton Keynes, MK9 3BN",
+  location: "Margaret Powell House, Milton Keynes, MK9 3BN",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
 )
@@ -162,5 +162,21 @@ event.save
 
 puts "Created #{Event.count} events"
 
-puts "Created #{Booking.count} bookings"
+puts "Creating bookings"
 
+# Generate bookings for the first event
+event1 = Event.first
+booking = Booking.create(event: event1, user: kate, confirmed: [true, false].sample)
+booking.save
+
+# Generate bookings for the second event
+event2 = Event.second
+booking = Booking.create(event: event2, user: koni, confirmed: [true, false].sample)
+booking.save
+
+# Generate bookings for the third event
+event3 = Event.third
+booking = Booking.create(event: event3, user: kat, confirmed: [true, false].sample)
+booking.save
+
+puts "Created #{Booking.count} bookings"

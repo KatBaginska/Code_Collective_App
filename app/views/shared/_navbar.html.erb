@@ -1,15 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="sidebar">
   <div class="container-fluid">
     <%= link_to events_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "/img/logo_white.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%# <button class="navbar-toggler" type="button" data-action="click->sidebar#toggle" aria-label="Toggle sidebar">
+      <span class="navbar-toggler-icon"> %>
+        <i class="fas fa-bars fa-2xl text-white" id="burger-menu" data-action="click->sidebar#toggle"></i>
+      <%# </span>
+    </button> %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="sidebar d-none" data-sidebar-target="menu">
+      <ul class="navbar-nav me-auto" id="sidebar-bits">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Bookings", bookings_path, class: "nav-link" %>
@@ -17,15 +19,14 @@
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Your events", "#", class: "dropdown-item" %>
-              <%= link_to "Your bookings",bookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+            <%= link_to "Your events", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Your bookings", bookings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
