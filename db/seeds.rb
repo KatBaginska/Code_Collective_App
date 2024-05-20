@@ -84,6 +84,12 @@ Booking.create(
   user: kate
 )
 
+Booking.create(
+  event: event,
+  number_of_tickets: 1,
+  user: koni
+)
+
 Chatroom.create(
   event_id: 1,
   name: event.name

@@ -54,6 +54,7 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "pg_search"
 gem 'acts-as-taggable-on'
+gem "simple_calendar", "~> 2.4"
 
 group :development, :test do
   gem "dotenv-rails"

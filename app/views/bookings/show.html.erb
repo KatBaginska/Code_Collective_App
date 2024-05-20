@@ -1,20 +1,41 @@
-<div class="container mt-5">
-  <h1>Booking Details</h1>
-
-  <p><strong>ID:</strong> <%= @booking.id %></p>
-  <p><strong>User:</strong> <%= @booking.user.email %></p>
+<br>
+<br>
+<div class="container mt-5 booking-details-container">
+  <div class="d-flex align-items-center mt-5">
+    <%= link_to "⇦", events_path, class: "btn btn-secondary me-3" %>
+    <h1 id="booking-headings" class="mb-0">Booking Details</h1>
+  </div>
+  <br>
+  <p id="booking-subtitle"><strong>Event:</strong> <%= @booking.event.name %></p>
+  <br>
   <%= cl_image_tag @booking.event.photos[0].key, height: 250, crop: :fill, class: "hero" %>
-  <p><strong>Event:</strong> <%= @booking.event.name %></p>
-  <p><strong>Description:</strong> <%= @booking.event.description %></p>
-  <p><strong>Tickets:</strong> <%= @booking.number_of_tickets %></p>
-  <p><strong>Confirmed:</strong> <%= 'Yes' %></p>
+  <div class="d-flex mt-5">
+    <p id="booking-headings"><strong>Description:</strong> <%= @booking.event.description %></p>
+  </div>
 
-  <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-primary" %>
-  <%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }, class: "btn btn-danger" %>
-  <%= link_to "Back to Bookings", bookings_path, class: "btn btn-secondary" %>
-    <% if current_user.bookings.where(event: @booking.event) %>
-      <%= link_to event_chatroom_path(@booking.event), class: "btn btn-secondary" do %>
-      <i class="far fa-comment-alt"></i>
+  <div class="d-flex align-items-center mt-5">
+    <p id="booking-headings"><strong> Date:</strong> <%= @booking.event.date %> </p>
+    <p id="booking-headings"><strong> Start Time:</strong> <%= @booking.event.start_time.strftime("%H:%M %p")%> </p>
+    <p id="booking-headings"><strong> End Time:</strong> <%= @booking.event.end_time.strftime("%H:%M %p")%> </p>
+  </div>
+  <div class="d-flex align-items-center mt-5">
+    <p id="booking-headings"><strong>Tickets:</strong> <%= @booking.number_of_tickets %></p>
+    <p id="booking-headings"><strong>Confirmed:</strong> <%= 'Yes' %></p>
+    <p id="booking-headings"><strong>ID:</strong> <%= @booking.id %></p>
+    <p id="booking-headings"><strong>User:</strong> <%= @booking.user.email %></p>
+  </div>
+  <div class="booking-links justify-content-start mt-3">
+    <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-primary" %>
+    <%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }, class: "btn btn-danger" %>
+    <%= link_to "View your events", bookings_path, class: "btn btn-secondary" %>
+      <% if current_user.bookings.where(event: @booking.event) %>
+        <%= link_to event_chatroom_path(@booking.event), class: "btn btn-secondary" do %>
+        <i class="far fa-comment-alt"></i>
+        <% end %>
       <% end %>
-    <% end %>
+  </div>
 </div>
+<br>
+<br>
+<br>
+<br>
