@@ -9,6 +9,7 @@
 @import "button";
 @import "chatroom";
 @import "forms";
+@import "message";
 
 
 
@@ -85,7 +86,7 @@
 }
 
 p {
-  color: rgb(165, 165, 165);
+  color: white;
 }
 
 .search-title {
