@@ -16,6 +16,18 @@
       </div>
 
       <div class="form-input">
+        <%= f.label :date, class: "bold-label" %>
+        <p><%= @event.date %></p>
+      </div>
+
+       <div class="form-input">
+        <%= f.label :start_time, as: :time, class: "bold-label" %>
+        <p><%= @event.start_time.strftime("%H:%M %p") %></p>
+        <%= f.label :end_time, as: :time, class: "bold-label" %>
+        <p><%= @event.end_time.strftime("%H:%M %p") %></p>
+      </div>
+
+      <div class="form-input">
         <%= f.label :number_of_tickets, class: "bold-label" %>
         <%= f.number_field :number_of_tickets, min: 1, value: 1 %>
       </div>
