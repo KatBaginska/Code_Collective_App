@@ -87,7 +87,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
+  config.cache_store = :redis_cache_store, { url: ENV.fetch['REDIS_URL'] }
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
