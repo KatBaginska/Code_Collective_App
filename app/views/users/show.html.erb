@@ -1,9 +1,12 @@
+<br>
+<br>
+<br>
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row align-items-center" id="profile-box">
+    <div class="col-md-4 d-flex justify-content-center">
       <% if @user.photo.present? %>
-        <div class="user-avatar mb-3">
-          <%= cl_image_tag(@user.photo.key, alt: @user.username, class: 'img-fluid rounded-circle') %>
+        <div class="user-avatar">
+          <%= cl_image_tag(@user.photo.key, alt: @user.username, class: 'img-fluid rounded-circle user-image') %>
         </div>
       <% end %>
     </div>
@@ -20,4 +23,23 @@
       <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
     </div>
   </div>
+  <br>
+  <div class="row mt-5">
+    <div class="col">
+      <h2 id="profile-headings">Events Created by <%= @user.username %></h2>
+      <% if @events.any? %>
+        <ul class="list-group">
+          <% @events.each do |event| %>
+            <li class="list-group-item">
+              <%= link_to event.name, event_path(event) %>
+              <span class="text-muted">on <%= event.date.strftime("%B %d, %Y") %></span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="text-muted">No events created by this user.</p>
+      <% end %>
+    </div>
+
+  <div>
 </div>
