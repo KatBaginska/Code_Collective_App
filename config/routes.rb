@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/edit'
+  get 'users/update'
   get 'events/index'
   get 'events/show'
   devise_for :users
@@ -13,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings
-  resources :user, only: [:show]
+  resources :users, only: %i[show edit update]
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end

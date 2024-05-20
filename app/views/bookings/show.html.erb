@@ -12,4 +12,9 @@
   <%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-primary" %>
   <%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }, class: "btn btn-danger" %>
   <%= link_to "Back to Bookings", bookings_path, class: "btn btn-secondary" %>
+    <% if current_user.bookings.where(event: @booking.event) %>
+      <%= link_to event_chatroom_path(@booking.event), class: "btn btn-secondary" do %>
+      <i class="far fa-comment-alt"></i>
+      <% end %>
+    <% end %>
 </div>

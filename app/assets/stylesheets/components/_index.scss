@@ -55,25 +55,33 @@
   justify-content: space-between;
 }
 
+
 .form-input {
+  color: rgb(165, 165, 165);
+}
+
+.f-input {
   color: rgb(165, 165, 165);
 }
 
 .new-event {
   color: rgb(165, 165, 165);
+  padding-top: 32px;
 }
 
-.booking-name {
-  color: rgb(165, 165, 165);
-  font-size: 25px;
-}
+// .booking-name {
+//   color: rgb(165, 165, 165);
+//   font-size: 25px;
+// }
 
-.card-details p {
-  color: rgb(165, 165, 165);
-}
+// .card-details p {
+//   color: rgb(165, 165, 165);
+// }
 
 .your-bookings {
   color: rgb(165, 165, 165);
+  padding-top: 32px;
+  font-size: 25px;
 }
 
 p {
@@ -81,5 +89,10 @@ p {
 }
 
 .search-title {
+  color: white;
+  padding-right: 16px;
+}
+
+hr {
   color: rgb(165, 165, 165);
 }
