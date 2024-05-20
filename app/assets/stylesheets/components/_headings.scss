@@ -1,0 +1,38 @@
+#booking-headings{
+  color: white;
+}
+
+.booking-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 800px; /* Adjust the max-width as needed */
+  box-shadow: 0 0 8px #0FFF50; /* Adjust the box shadow to be equal on all sides */
+  background-color: #000000; /* Optional: change background color */
+  border-radius: 15px; /* Adjust the border radius as needed */
+}
+
+.booking-details-container .p{
+  color: white;
+}
+
+#booking-subtitle{
+  color: white;
+  font-size: 20px;
+}
+.booking-details-container .hero{
+  width: 400px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.d-flex.align-items-center p {
+  margin-right: 15px; /* Adjust the spacing as needed */
+}
+
+.d-flex.align-items-center p:last-child {
+  margin-right: 0; /* Remove right margin from the last <p> */
+}

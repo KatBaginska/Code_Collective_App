@@ -4,7 +4,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @events = @user.events
+    @created_events = @user.events # Events created by the user
+    booked_events = @user.bookings
+    @user_bookings = booked_events.map do |booking|
+      booking.event
+    end
+    @calendar_events = @created_events + @user_bookings
   end
 
   def edit

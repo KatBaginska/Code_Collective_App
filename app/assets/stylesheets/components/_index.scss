@@ -10,7 +10,8 @@
 @import "chatroom";
 @import "forms";
 @import "profile";
-
+@import "headings";
+@import "carousel";
 
 
 .banner {
@@ -83,6 +84,10 @@
   color: rgb(165, 165, 165);
   padding-top: 32px;
   font-size: 25px;
+}
+
+#subtitle{
+  color: rgb(165, 165, 165);
 }
 
 p {
