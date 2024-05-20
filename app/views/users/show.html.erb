@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <% if @user.photo.present? %>
+        <div class="user-avatar mb-3">
+          <%= cl_image_tag(@user.photo.key, alt: @user.username, class: 'img-fluid rounded-circle') %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h1 class="display-4"><%= @user.username %></h1>
+      <p class="lead">Email: <%= @user.email %></p>
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary mt-3' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

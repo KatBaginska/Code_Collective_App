@@ -89,7 +89,6 @@ Chatroom.create(
   name: event.name
 )
 
-
 file = URI.open("https://www.sunset.com/wp-content/uploads/burger-at-tailgate-party-pc-thomas-barwick-getty-400x0-c-default.jpg")
 
 event = Event.new(name: "Bootstrap, Beer & BBQ!",
