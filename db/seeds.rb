@@ -78,22 +78,6 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
-Booking.create(
-  event: event,
-  number_of_tickets: 1,
-  user: kate
-)
-
-Booking.create(
-  event: event,
-  number_of_tickets: 1,
-  user: koni
-)
-
-Chatroom.create(
-  event_id: 1,
-  name: event.name
-)
 
 file = URI.open("https://www.sunset.com/wp-content/uploads/burger-at-tailgate-party-pc-thomas-barwick-getty-400x0-c-default.jpg")
 
@@ -101,7 +85,7 @@ event = Event.new(name: "Bootstrap, Beer & BBQ!",
   description: "Is Bootstrap getting you down? Do you need to meet people you can talk things through with, discuss projects or just have a moan over how hard coding can be? Then you are welcome to come and join us for an informal gathering of like-minded people to talk through ideas, get some tips and advice and maybe help someone out too!",
   date: Date.new(2024, 6, 1),
   start_time: DateTime.new(2024, 6, 1, 17),
-  end_time: DateTime.new(2024, 8, 2, 20),
+  end_time: DateTime.new(2024, 6, 1, 20),
   location: "Constantine Road, London NW3 2LS",
   user: ebi,
   keywords: "Bootstrap, Web development, CSS, Styling"
@@ -116,9 +100,9 @@ file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3
 
 event = Event.new(name: "An Evening of Python Coding",
   description: "Learners and complete Python novices are welcome as well as experts. If you want to start something new, please see this as an opportunity to jump start the project. If you need help with an existing coding project, bring it with you and we will have a look at it. If you want to show your complete code to someone else to test it, or if you just want to consult with python experts you are welcome.",
-  date: Date.new(2024, 5, 22),
-  start_time: DateTime.new(2024, 8, 2, 19),
-  end_time: DateTime.new(2024, 8, 2, 21),
+  date: Date.new(2024, 5, 28),
+  start_time: DateTime.new(2024, 5, 28, 19),
+  end_time: DateTime.new(2024, 5, 28, 21),
   location: "10 South Pl, London EC2M 7EB",
   user: thepythongroup,
   keywords: "Python, Web development"
@@ -153,9 +137,9 @@ file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article1
 event = Event.new(name: "Code with HTML, CSS & JavaScript",
   description: "Are you thinking about a career in Software Engineering, but don't know where to start? This free, 2-hour workshop will give you a solid understanding of what it takes to be a Web Developer, and how to write your first line of code.
   In this beginner-friendly session, you will learn from an expert instructor with real world experience. By the end of the session, you will: - Have a better understanding of the coding world and where web development fits in - Become familiar with the basic fundamentals of HTML, CSS and Javascript - Know how to start building a front-end web page on repl.it.",
-  date: Date.new(2024, 7, 19),
-  start_time: DateTime.new(2024, 7, 19, 19),
-  end_time: DateTime.new(2024, 7, 19, 21),
+  date: Date.new(2024, 6, 22),
+  start_time: DateTime.new(2024, 6, 22, 19),
+  end_time: DateTime.new(2024, 6, 22, 21),
   location: "Margaret Powell House, Milton Keynes, MK9 3BN",
   user: generalassembly,
   keywords: "HTML, CSS, JavaScript, coding, programming"
@@ -167,13 +151,13 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 event.save
 
 file = URI.open("https://secure.meetupstatic.com/photos/event/a/7/d/1/600_518682961.webp?w=384")
-file = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-to-learn-how-to-code-for-free.jpg")
+file_1 = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-to-learn-how-to-code-for-free.jpg")
 
 event = Event.new(name: "Coffee & Code - Saturday",
   description: "Bring your laptop, get a brew and start working on your project in good company. This is an event for Saturday morning early-birds who like a productive and social start to the weekend. Please note this is a general-purpose tech meet-up. Feel free to join, if you are:- Working on a project / learning about a topic that is tech or tech-adjacent- Keen on getting help / input from, or just socialising with other tech-folk. Nice and respectful of everyone present, regardless of background, chosen tech-stack or current skill-level.",
-  date: Date.new(2024, 6, 22),
-  start_time: DateTime.new(2024, 6, 22, 9),
-  end_time: DateTime.new(2024, 7, 19, 11),
+  date: Date.new(2024, 7, 13),
+  start_time: DateTime.new(2024, 7, 13, 9),
+  end_time: DateTime.new(2024, 6, 13, 11),
   location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
   user: kate,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
@@ -189,9 +173,9 @@ file_1 = URI.open("https://media.sciencephoto.com/f0/33/49/96/f0334996-800px-wm.
 
 event = Event.new(name: "Ruby & Brunch",
   description: "Whether you are a complete novice or a programming master there is always more to learn. With Ruby & Brunch you can read that great programming book, work on that revolutionary project, or learn that cool new language with good food, a drink and fellow programmers to talk through ideas. We range from Ruby users through to HTML, CSS and JavaScript, whatever you want to talk about we are here to connect with you.",
-  date: Date.new(2024, 6, 22),
-  start_time: DateTime.new(2024, 6, 22, 9),
-  end_time: DateTime.new(2024, 7, 19, 11),
+  date: Date.new(2024, 8, 10),
+  start_time: DateTime.new(2024, 8, 10, 9),
+  end_time: DateTime.new(2024, 8, 10, 11),
   location: "Thrive, 5-7 Norfolk Street, Cambridge, CB1 2LB",
   user: koni,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"

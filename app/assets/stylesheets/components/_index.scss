@@ -9,9 +9,11 @@
 @import "button";
 @import "chatroom";
 @import "forms";
+@import "message";
 @import "profile";
 @import "headings";
 @import "carousel";
+
 
 
 .banner {
@@ -91,7 +93,7 @@
 }
 
 p {
-  color: rgb(165, 165, 165);
+  color: white;
 }
 
 .search-title {

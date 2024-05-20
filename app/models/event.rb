@@ -16,11 +16,16 @@ class Event < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
 
-  # after_create :create_chat_room
+  after_create :create_chatroom
 
-  # private
+  private
 
-  # def create_chat_room
-  #   Chatroom.create(event: self)
-  # end
+  def create_chatroom
+    @chatroom = Chatroom.create(event: self)
+    # @chatroom = Chatroom.new
+    # @event = Event.find(params[:id])
+    # @chatroom.event = @event
+    # @chatroom.save
+    # raise
+  end
 end

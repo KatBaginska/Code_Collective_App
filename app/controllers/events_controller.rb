@@ -34,6 +34,9 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save
+      @chatroom = Chatroom.new
+      @chatroom.event = @event
+      @chatroom.save
       redirect_to event_path(@event)
     else
       puts @event.errors.full_messages
