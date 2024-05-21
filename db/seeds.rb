@@ -156,7 +156,7 @@ event = Event.new(name: "Coffee & Code - Saturday",
   description: "Bring your laptop, get a brew and start working on your project in good company. This is an event for Saturday morning early-birds who like a productive and social start to the weekend. Please note this is a general-purpose tech meet-up. Feel free to join, if you are:- Working on a project / learning about a topic that is tech or tech-adjacent- Keen on getting help / input from, or just socialising with other tech-folk. Nice and respectful of everyone present, regardless of background, chosen tech-stack or current skill-level.",
   date: Date.new(2024, 7, 13),
   start_time: DateTime.new(2024, 7, 13, 9),
-  end_time: DateTime.new(2024, 6, 13, 11),
+  end_time: DateTime.new(2024, 7, 13, 11),
   location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
