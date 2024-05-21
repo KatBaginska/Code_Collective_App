@@ -44,7 +44,7 @@
             <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
             <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
             <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-            <%= link_to "Check this event", event_path(event), class: "button-56" %>
+            <%= link_to "Find out more", event_path(event), class: "button-56" %>
           </div>
         </div>
       </div>
