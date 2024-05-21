@@ -33,12 +33,33 @@ main {
   align-items: center;
 }
 
-
 .info {
   text-align: right;
 }
 
-
 .footer .text {
   color: rgb(165, 165, 165);
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer .social-icon {
+  margin: 0 10px;
+  color: #00ff81;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.footer .social-icon:hover {
+  color: #00cc66;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
