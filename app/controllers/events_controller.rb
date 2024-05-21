@@ -51,7 +51,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     if @event.update(event_params)
-      redirect_to @event, notice: 'Updated Succesfully!'
+      redirect_to @event, notice: 'Updated Successfully!'
     else
       render :edit
     end

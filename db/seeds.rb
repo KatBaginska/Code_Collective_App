@@ -169,8 +169,8 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
-file = URI.open("https://us.v-cdn.net/6036147/uploads/S78M2IL9SK3Z/1-1200x675.jpg")
-file_1 = URI.open("https://media.sciencephoto.com/f0/33/49/96/f0334996-800px-wm.jpg")
+file = URI.open("https://www.explore-group.com/storage/images-processed/w-1500_h-auto_m-fit_s-any__highres_464010407.jpeg")
+file_1 = URI.open("https://app.codesmith.io/cba42abf0cb26842d7d9.jpg")
 
 event = Event.new(name: "Ruby & Brunch",
   description: "Whether you are a complete novice or a programming master there is always more to learn. With Ruby & Brunch you can read that great programming book, work on that revolutionary project, or learn that cool new language with good food, a drink and fellow programmers to talk through ideas. We range from Ruby users through to HTML, CSS and JavaScript, whatever you want to talk about we are here to connect with you.",

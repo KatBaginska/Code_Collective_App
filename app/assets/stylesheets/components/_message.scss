@@ -16,7 +16,8 @@
 }
 
 .sender-style {
-  background-color: rgb(4, 163, 4);
+  // background-color: rgb(4, 163, 4);
+  background-color: #008d47;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -26,9 +27,9 @@
 
 .receiver-style {
   background-color: rgb(40, 42, 40);
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
   padding-left: 24px;
   padding-top: 24px;
 }
