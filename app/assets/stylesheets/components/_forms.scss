@@ -14,6 +14,28 @@
   color: rgb(255, 255, 255);
 }
 
+
+.new-event {
+  padding: 8px 150px 32px;
+  box-shadow: 0 0 8px #0FFF50;
+  margin-top: 80px;
+  border: 2px solid #00ff81;
+}
+
+.new-event h1{
+  padding-left: 0;
+}
+
+.edit-event {
+  padding: 8px 150px 32px;
+  box-shadow: 0 0 8px #0FFF50;
+  margin-top: 80px;
+  border: 2px solid #00ff81;
+}
+
+.edit-event h1{
+  padding-left: 0;
+
 .bookings-new-form{
   display: flex;
   flex-direction: column;
@@ -29,4 +51,5 @@
   padding: 20px;
   width: 600px;
   border: 1px solid #f7faf7;
+
 }

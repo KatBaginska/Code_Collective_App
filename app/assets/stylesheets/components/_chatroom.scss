@@ -1,19 +1,17 @@
 .chatroom {
   background: black;
   margin-top: 9px;
+  padding: 0 75px 0 75px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  // border: 1px solid #00ff81; /* Border color same as button */
-  box-shadow: 3px 4px 8px rgba(0, 255, 129, 0.3);
-  // transition: box-shadow 0.3s ease, transform 0.3s ease;
-  // border: 1px solid white;
-  // box-shadow: 0px 4px 8px rgba(0, 255, 129, 0.3);
+  // box-shadow: 0 0 8px #0FFF50;
+  // border: 2px solid #00ff81; /* Border color same as button */
 }
 
-  h1 {
+  .chatroom h1 {
     color: white;
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
@@ -22,8 +20,9 @@
 
   .messages {
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 1rem;
+    border-left: 1px solid white;
   }
 
   #new_message {
@@ -52,11 +51,9 @@
   width: 100%;
   border: none;
   padding: 10px;
-  // border-bottom-left-radius: 10px;
-  // border-top-left-radius: 10px;
   margin-right: 10px;
-  background-color: rgb(40, 42, 40); /* Grey background color */
-  color: #333; /* Text color */
+  background-color: white; /* Grey background color */
+  color: white; /* Text color */
   outline: none;
 }
 
@@ -70,4 +67,14 @@
 .send-icon {
   width: 24px;
   height: 24px;
+}
+
+.message-bar {
+  color: white;
+  background-color: black;
+}
+
+.container-chatroom {
+  background-color: black;
+
 }

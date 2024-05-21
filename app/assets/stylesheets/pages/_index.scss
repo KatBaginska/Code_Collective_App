@@ -146,3 +146,19 @@ h2{
 .btn-primary:hover {
   background-color: #00cc66;
 }
+
+h1 {
+  color: white;
+}
+
+
+// map marker styling
+
+.custom-marker {
+
+  background-color: #00FF00; /* Green color */
+  width: 25px; /* Adjust the width as needed */
+  height: 25px; /* Adjust the height as needed */
+  border-radius: 50%; /* Makes the marker a circle */
+
+}
