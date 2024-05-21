@@ -11,9 +11,9 @@
 require "open-uri"
 
 puts "Cleaning up the db"
-Booking.destroy_all
-Event.destroy_all
-User.destroy_all
+# Booking.destroy_all
+# Event.destroy_all
+# User.destroy_all
 
 puts "Creating users"
 
@@ -69,7 +69,7 @@ event = Event.new(name: "Introduction to User Experience Design",
   start_time: DateTime.new(2024, 8, 2, 18),
   end_time: DateTime.new(2024, 8, 2, 20),
   location: "Kiln House, Norwich, NR2 1DX",
-  user: codebar,
+  user_id: codebar.id,
   keywords: "UX design, Web development, User experience"
 )
 event.tag_list.add("UX design", "Web development", "User experience")
@@ -77,7 +77,6 @@ event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
-
 
 file = URI.open("https://www.sunset.com/wp-content/uploads/burger-at-tailgate-party-pc-thomas-barwick-getty-400x0-c-default.jpg")
 
@@ -87,7 +86,7 @@ event = Event.new(name: "Bootstrap, Beer & BBQ!",
   start_time: DateTime.new(2024, 6, 1, 17),
   end_time: DateTime.new(2024, 6, 1, 20),
   location: "Constantine Road, London NW3 2LS",
-  user: ebi,
+  user_id: ebi.id,
   keywords: "Bootstrap, Web development, CSS, Styling"
 )
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
@@ -104,7 +103,7 @@ event = Event.new(name: "An Evening of Python Coding",
   start_time: DateTime.new(2024, 5, 28, 19),
   end_time: DateTime.new(2024, 5, 28, 21),
   location: "10 South Pl, London EC2M 7EB",
-  user: thepythongroup,
+  user_id: thepythongroup.id,
   keywords: "Python, Web development"
 )
 event.tag_list.add("Python", "Web development")
@@ -122,7 +121,7 @@ event = Event.new(name: "Coding Workshop at SR2",
   start_time: DateTime.new(2024, 6, 6, 18),
   end_time: DateTime.new(2024, 6, 6, 21),
   location: "1 Victoria Street, Bristol, BS1 6AA",
-  user: womenrock,
+  user_id: womenrock.id,
   keywords: "coding, programming, Women in tech"
 )
 event.tag_list.add("coding", "programming", "Women in tech")
@@ -141,7 +140,7 @@ event = Event.new(name: "Code with HTML, CSS & JavaScript",
   start_time: DateTime.new(2024, 6, 22, 19),
   end_time: DateTime.new(2024, 6, 22, 21),
   location: "Margaret Powell House, Milton Keynes, MK9 3BN",
-  user: generalassembly,
+  user_id: generalassembly.id,
   keywords: "HTML, CSS, JavaScript, coding, programming"
 )
 event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
@@ -159,12 +158,14 @@ event = Event.new(name: "Coffee & Code - Saturday",
   start_time: DateTime.new(2024, 7, 13, 9),
   end_time: DateTime.new(2024, 6, 13, 11),
   location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
-  user: kate,
+  user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
 event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
 
 event.save
 
@@ -177,7 +178,7 @@ event = Event.new(name: "Ruby & Brunch",
   start_time: DateTime.new(2024, 8, 10, 9),
   end_time: DateTime.new(2024, 8, 10, 11),
   location: "Thrive, 5-7 Norfolk Street, Cambridge, CB1 2LB",
-  user: koni,
+  user_id: koni.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
 event.tag_list.add("connect in person", "HTML", "CSS", "JavaScript", "Ruby", "Ruby on rails", "coding", "programming")

@@ -11,8 +11,6 @@ class EventsController < ApplicationController
     end
     #authorize @events
   end
-
-
   def show
     @event = Event.find(params[:id])
     @chatroom = @event.chatroom
