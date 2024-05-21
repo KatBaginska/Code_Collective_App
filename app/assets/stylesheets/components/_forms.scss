@@ -13,3 +13,20 @@
 #login {
   color: rgb(255, 255, 255);
 }
+
+.bookings-new-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookings-new-form .form-input {
+  margin-right: 50px; /* Adjust the value as needed */
+}
+
+.book-tickets-section{
+  padding: 20px;
+  width: 600px;
+  border: 1px solid #f7faf7;
+}

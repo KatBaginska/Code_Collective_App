@@ -1,39 +1,59 @@
 <div class="container mt-5 d-flex justify-content-center align-items-center">
-<br>
-<br>
+  <br>
+  <br>
+
   <%= simple_form_for [@event, @booking] do |f| %>
-    <h1 class="booking-name"> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Book: <%= @event.name %></h1>
-    <%= cl_image_tag @event.photos[0].key, width: 600, height: 400, crop: :fill, class: "hero" %>
-    <br>
-    <div class="form-input">
-        <%= f.label :first_name, class: "bold-label" %>
-        <p><%= current_user.first_name %></p>
-      </div>
+      <div class="bookings-new-form">
+        <h1 class="booking-name"> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Book: <%= @event.name %></h1>
+        <br>
+        <%= cl_image_tag @event.photos[0].key, width: 600, height: 400, crop: :fill, class: "hero" %>
+        <br>
+        <div class="book-tickets-section">
 
-      <div class="form-input">
-        <%= f.label :email, class: "bold-label" %>
-        <p><%= current_user.email %></p>
-      </div>
+          <div class="d-flex align-items-center mt-3">
 
-      <div class="form-input">
-        <%= f.label :date, class: "bold-label" %>
-        <p><%= @event.date %></p>
-      </div>
+            <div class="form-input">
+              <%= f.label :first_name, class: "bold-label" %>
+              <p><%= current_user.first_name %></p>
+            </div>
 
-       <div class="form-input">
-        <%= f.label :start_time, as: :time, class: "bold-label" %>
-        <p><%= @event.start_time.strftime("%H:%M %p") %></p>
-        <%= f.label :end_time, as: :time, class: "bold-label" %>
-        <p><%= @event.end_time.strftime("%H:%M %p") %></p>
-      </div>
+            <div class="form-input">
+              <%= f.label :email, class: "bold-label" %>
+              <p><%= current_user.email %></p>
+            </div>
 
-      <div class="form-input">
-        <%= f.label :number_of_tickets, class: "bold-label" %>
-        <%= f.number_field :number_of_tickets, min: 1, value: 1 %>
+            <div class="form-input">
+              <%= f.label :date, class: "bold-label" %>
+              <p><%= @event.date %></p>
+            </div>
+
+          </div>
+
+          <div class="d-flex align-items-center mt-3">
+
+            <div class="form-input">
+              <%= f.label :start_time, as: :time, class: "bold-label" %>
+              <p><%= @event.start_time.strftime("%H:%M") %></p>
+            </div>
+
+            <div class="form-input">
+              <%= f.label :end_time, as: :time, class: "bold-label" %>
+              <p><%= @event.end_time.strftime("%H:%M") %></p>
+            </div>
+
+
+          </div>
+          <div class="d-flex align-items-center mt-3">
+            <div class="form-input">
+              <%= f.label :number_of_tickets, class: "bold-label" %>
+              <br>
+              <%= f.number_field :number_of_tickets, min: 1, value: 1 %>
+            </div>
+            <br>
+            <%= f.button :submit, "Book Event",  class: "btn btn-primary"  %>
+            <br>
+          </div>
+        </div>
       </div>
-      <br>
-      <br>
-    <%= f.button :submit, "Book Event",  class: "btn btn-primary"  %>
-    <br>
   <% end %>
 <div>
