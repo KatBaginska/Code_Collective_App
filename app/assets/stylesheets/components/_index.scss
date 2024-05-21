@@ -9,6 +9,10 @@
 @import "button";
 @import "chatroom";
 @import "forms";
+@import "message";
+@import "profile";
+@import "headings";
+@import "carousel";
 
 
 
@@ -36,7 +40,16 @@
 }
 
 .map {
-  padding-top: 16px;
+  padding-top: 20px;
+}
+
+.details p {
+  color: rgb(165, 165, 165)
+}
+
+.title-container h1 {
+  color: rgb(165, 165, 165);
+  font-size: 25px;
 }
 
 // bookings index page
@@ -46,3 +59,48 @@
   justify-content: space-between;
 }
 
+
+.form-input {
+  color: rgb(165, 165, 165);
+}
+
+.f-input {
+  color: rgb(165, 165, 165);
+}
+
+.new-event {
+  color: rgb(165, 165, 165);
+  padding-top: 32px;
+}
+
+// .booking-name {
+//   color: rgb(165, 165, 165);
+//   font-size: 25px;
+// }
+
+// .card-details p {
+//   color: rgb(165, 165, 165);
+// }
+
+.your-bookings {
+  color: rgb(165, 165, 165);
+  padding-top: 32px;
+  font-size: 25px;
+}
+
+#subtitle{
+  color: rgb(165, 165, 165);
+}
+
+p {
+  color: white;
+}
+
+.search-title {
+  color: white;
+  padding-right: 16px;
+}
+
+hr {
+  color: rgb(165, 165, 165);
+}

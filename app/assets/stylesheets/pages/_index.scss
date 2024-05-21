@@ -20,6 +20,7 @@ h2{
   font-style: normal;
 }
 .row{
+
   background-color: #1e1e1e;
 }
 
@@ -33,8 +34,7 @@ h2{
 .booking-card {
   flex: 0 0 calc(33.33% - 20px); /* Adjust card width */
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid #00ff81; /* Border color same as button */
   overflow: hidden;
   box-shadow: 0px 4px 4px rgba(0, 255, 129, 0.5);
 }
@@ -43,30 +43,41 @@ h2{
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px 8px 0 0;
 }
 
 .event-card {
-  padding: 10px;
+  padding: 20px;
   color: #00ff81;
   background-color: #1e1e1e;
-  border: solid 1px white;
-  box-shadow: 0px 4px 4px rgba(0, 255, 129, 0.5);
-  height: 570px;
+  border: 2px solid #00ff81; /* Border color same as button */
+  box-shadow: 0px 4px 8px rgba(0, 255, 129, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 255, 129, 0.6);
+  transform: translateY(-5px);
 }
 
 .event-name {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
 }
 
 .event-info {
-  margin-bottom: 3px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
 }
 
 .event-link {
   text-decoration: none;
   color: #00ff81;
+  font-weight: bold;
+}
+
+.event-link:hover {
+  text-decoration: underline;
 }
 
 .video-container {
@@ -85,7 +96,7 @@ h2{
   object-fit: cover;
 }
 
-.video-container .search-container{
+.video-container .search-container {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -116,4 +127,22 @@ h2{
   width: 100%;
   z-index: 1;
   transition: top 0.5s ease;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+/* Button Styles (unchanged) */
+.btn-primary {
+  background-color: #00ff81;
+  border: none;
+  color: #1e1e1e;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00cc66;
 }

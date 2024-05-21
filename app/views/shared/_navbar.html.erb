@@ -7,6 +7,7 @@
     <%# <button class="navbar-toggler" type="button" data-action="click->sidebar#toggle" aria-label="Toggle sidebar">
       <span class="navbar-toggler-icon"> %>
         <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+
         <i class="fas fa-bars fa-2xl text-white" id="burger-menu" data-action="click->sidebar#toggle"></i>
       <%# </span>
     </button> %>
@@ -15,16 +16,18 @@
       <ul class="navbar-nav me-auto" id="sidebar-bits">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Bookings", bookings_path, class: "nav-link" %>
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+            <% else %>
+                <img src="default_avatar.png" class="avatar" alt="default avatar">
+            <% end %>
+
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Your events", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Your bookings", bookings_path, class: "nav-link" %>
+            <%= link_to "Your events", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>

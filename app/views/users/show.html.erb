@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<div class="container mt-5">
+  <%= link_to "⇦", events_path, class: "btn btn-secondary" %>
+  <br>
+  <br>
+  <div class="row align-items-center" id="profile-box">
+    <div class="col-md-4 d-flex justify-content-center">
+      <% if @user.photo.present? %>
+        <div class="user-avatar">
+          <%= cl_image_tag(@user.photo.key, alt: @user.username, class: 'img-fluid rounded-circle user-image') %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h1 class="display-4"><%= @user.username %></h1>
+      <p class="lead">Email: <%= @user.email %></p>
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary mt-3' %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div>
+    <h2 id="profile-headings"> My events </h2>
+    <%= month_calendar(events: @calendar_events) do |date, events|%>
+      <%= date %>
+
+      <% events.each do |event| %>
+        <div class="event">
+          <p><%= event.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <div>
+</div>

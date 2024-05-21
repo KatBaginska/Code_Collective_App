@@ -12,5 +12,20 @@ class Event < ApplicationRecord
   has_many_attached :photos
   geocoded_by :location
   after_validation :geocode
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
+  has_many :bookings
+  has_many :users, through: :bookings
+
+  after_create :create_chatroom
+
+  private
+
+  def create_chatroom
+    @chatroom = Chatroom.create(event: self)
+    # @chatroom = Chatroom.new
+    # @event = Event.find(params[:id])
+    # @chatroom.event = @event
+    # @chatroom.save
+    # raise
+  end
 end
