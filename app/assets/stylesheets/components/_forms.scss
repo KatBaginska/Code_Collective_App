@@ -14,6 +14,7 @@
   color: rgb(255, 255, 255);
 }
 
+
 .new-event {
   padding: 8px 150px 32px;
   box-shadow: 0 0 8px #0FFF50;
@@ -34,4 +35,21 @@
 
 .edit-event h1{
   padding-left: 0;
+
+.bookings-new-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookings-new-form .form-input {
+  margin-right: 50px; /* Adjust the value as needed */
+}
+
+.book-tickets-section{
+  padding: 20px;
+  width: 600px;
+  border: 1px solid #f7faf7;
+
 }
