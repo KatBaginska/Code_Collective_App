@@ -25,9 +25,8 @@
       <%= f.input :content,
       label: false,
       placeholder: "Message ##{@chatroom.name}",
+      input_html: { class: "message-input" },
       wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" do %>
-          <%= image_tag "https://www.flaticon.com/free-icons/send", alt: "Send",  %>
-        <% end %>
+        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
     <% end %>
 </div>
