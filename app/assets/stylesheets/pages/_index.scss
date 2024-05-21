@@ -13,8 +13,11 @@ p{
 
 h2{
   color: white;
-  font-size: 70px;
+  font-size: 100px;
   font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
 }
 .row{
   background-color: #1e1e1e;
@@ -87,9 +90,8 @@ h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
+  background-color: black;
 }
 
 .large-search-input {
@@ -99,9 +101,9 @@ h2{
 }
 
 .tag-button-white {
-  background-color: white;   /* Set background to white */
-  color: darkgreen;              /* Set text color to black or another visible color */
-  border-color: white;       /* Set border color to white */
+  background-color: white;
+  color: darkgreen;
+  border-color: white;
 }
 
 .tag-button-white:hover {
