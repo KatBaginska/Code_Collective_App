@@ -25,7 +25,7 @@
 
             <div class="form-input">
               <%= f.label :date, class: "bold-label" %>
-              <p><%= @event.date %></p>
+              <p><%= @event.start_time.strftime("%A %d %B %Y") %></p>
             </div>
 
           </div>
