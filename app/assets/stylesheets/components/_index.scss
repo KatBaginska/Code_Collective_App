@@ -41,7 +41,8 @@
 }
 
 .details p {
-  color: rgb(165, 165, 165)
+  color: rgb(201, 201, 201);
+  font-size: 20px;
 }
 
 
@@ -64,7 +65,11 @@
 .your-bookings {
   color: rgb(165, 165, 165);
   padding-top: 32px;
-  font-size: 25px;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
 }
 
 #subtitle{
@@ -82,4 +87,31 @@ p {
 
 hr {
   color: rgb(165, 165, 165);
+}
+
+#event-heading{
+  color: white;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
+}
+
+#event-goers{
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
+}
+
+#home-page-headings{
+  color: white;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
 }
