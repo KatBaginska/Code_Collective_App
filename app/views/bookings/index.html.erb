@@ -9,7 +9,7 @@
     </div>
     <div class="cards-events">
       <% @bookings.each do |booking| %>
-        <div class="event-card">
+        <div class="event-card-booking">
           <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
