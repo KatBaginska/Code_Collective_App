@@ -94,20 +94,25 @@ h2{
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  opacity: 70%;
 }
 
-.video-container .search-container {
+.video-container .search-container{
+  top: 30%;
+  left: 20%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .large-search-input {
   width: 1120px;
-  height: 40px;
+  height: 44px;
   font-size: 16px; /* Optional: to make the text size larger */
 }
 
@@ -127,6 +132,8 @@ h2{
   width: 100%;
   z-index: 1;
   transition: top 0.5s ease;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .form-group {
