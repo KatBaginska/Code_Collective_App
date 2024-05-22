@@ -3,6 +3,9 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+
+    @upcoming_bookings = @bookings.joins(:event).where('events.date >= ?', Date.today).order('events.date ASC')
+    @past_bookings = @bookings.joins(:event).where('events.date < ?', Date.new(2024, 5, 24)).order('events.date DESC')
   end
 
   def show
@@ -25,8 +28,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      puts @booking.errors.full_messages
-      render :new, status: :unprocessable_entity
+      redirect_to @event, alert: @booking.errors.full_messages.to_sentence
     end
   end
 
