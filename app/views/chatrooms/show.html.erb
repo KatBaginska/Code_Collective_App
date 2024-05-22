@@ -19,15 +19,15 @@
       </div>
     <% end %>
   </div>
-
-  <%= simple_form_for [@chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-      <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" do %>
-          <%= image_tag "https://www.flaticon.com/free-icons/send", alt: "Send",  %>
-        <% end %>
-    <% end %>
+  <div class="message-bar">
+    <%= simple_form_for [@chatroom, @message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+        <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{@chatroom.name}",
+        input_html: { class: "message-input" },
+        wrapper_html: {class: "flex-grow-1"} %>
+          <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <% end %>
+  </div>
 </div>

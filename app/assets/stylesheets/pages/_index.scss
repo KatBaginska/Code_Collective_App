@@ -7,21 +7,17 @@
   box-sizing: border-box;
 }
 
-p{
+p {
   color: white;
 }
 
-h2{
+h2 {
   color: white;
   font-size: 100px;
   font-weight: 900;
   font-family: "Oswald", sans-serif;
   font-weight: medium 500;
   font-style: normal;
-}
-.row{
-
-  background-color: #1e1e1e;
 }
 
 .card-container {
@@ -32,11 +28,14 @@ h2{
 }
 
 .booking-card {
-  flex: 0 0 calc(33.33% - 20px); /* Adjust card width */
+  flex: 0 0 calc(33.33% - 20px);
   margin-bottom: 20px;
-  border: 2px solid #00ff81; /* Border color same as button */
+  border: 2px solid #00ff81;
   overflow: hidden;
   box-shadow: 0px 4px 4px rgba(0, 255, 129, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .castle-image {
@@ -49,14 +48,23 @@ h2{
   padding: 20px;
   color: #00ff81;
   background-color: #1e1e1e;
-  border: 2px solid #00ff81; /* Border color same as button */
+  border: 2px solid #00ff81;
   box-shadow: 0px 4px 8px rgba(0, 255, 129, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .event-card:hover {
   box-shadow: 0px 8px 16px rgba(0, 255, 129, 0.6);
   transform: translateY(-5px);
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-name {
@@ -114,6 +122,7 @@ h2{
   width: 1120px;
   height: 44px;
   font-size: 16px; /* Optional: to make the text size larger */
+
 }
 
 .tag-button-white {
@@ -140,7 +149,6 @@ h2{
   margin: 10px 0;
 }
 
-/* Button Styles (unchanged) */
 .btn-primary {
   background-color: #00ff81;
   border: none;
@@ -152,4 +160,60 @@ h2{
 
 .btn-primary:hover {
   background-color: #00cc66;
+}
+
+h1 {
+  color: white;
+}
+
+
+// map marker styling
+
+.custom-marker {
+
+  background-color: #00FF00; /* Green color */
+  width: 25px; /* Adjust the width as needed */
+  height: 25px; /* Adjust the height as needed */
+  border-radius: 50%; /* Makes the marker a circle */
+
+}
+
+// events show page
+
+.details-and-goers-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items at the start of the flex container's cross axis */
+  gap: 20px; /* Space between the details and event-goers */
+  margin-top: 24px;
+}
+
+.details {
+  flex: 1; /* Allows the details section to take available space */
+}
+
+.event-goers {
+  flex: 0 0 300px; /* Fixed width for the event-goers section */
+}
+
+.datetime-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Space between the items */
+  flex-wrap: wrap;
+}
+
+.datetime-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.booking-name {
+  margin-top: 32px;
 }

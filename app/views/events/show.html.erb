@@ -1,31 +1,26 @@
 <div class="container mt-5 event-show-container">
+<br>
   <div class="title-container text-center">
-    <br>
-    <h1><%= @event.name %></h1>
-    <br>
+    <%= link_to "⇦", events_path, class: "btn btn-secondary me-3" %>
+    <h1 id="event-heading" class="mb-0"><%= @event.name %></h1>
   </div>
+  <br>
   <div class="event-details-card">
     <div class="gallery">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% if @event.photos.present? %>
-            <div class="image-container">
-              <div class="main-image">
-                <div class="carousel-item active">
-                  <%= cl_image_tag @event.photos[0].key, width: 900, height: 500, crop: :fill %>
-                </div>
-              </div>
-              <% unless @event.photos.count == 1 %>
-                <% @event.photos.each_with_index do |photo, index| %>
-                  <% next if index == 0 %>
-                  <div class="carousel-item">
-                    <%= cl_image_tag photo.key, width: 900, height: 500,  crop: :fill %>
-                  </div>
-                <% end %>
-              <% end %>
+            <div class="carousel-item active">
+              <%= cl_image_tag @event.photos[0].key, width: 1300, height: 500, crop: :fill %>
             </div>
+            <% @event.photos.each_with_index do |photo, index| %>
+              <% next if index == 0 %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.key, width: 1300, height: 500, crop: :fill %>
+              </div>
+            <% end %>
           <% else %>
-            <%= "No photo available" %>
+            <p>No photo available</p>
           <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -38,45 +33,59 @@
         </button>
       </div>
     </div>
-    <br>
-    <div class="details-container">
+
+    <div class="details-and-goers-container d-flex">
       <div class="details">
         <p><%= @event.description %></p>
         <p>Location: <%= @event.location %></p>
-        <p>Hosted by <%= "#{@event.user.username}" %></p>
-        <p>Keywords: #<%= "#{@event.keywords}" %></p>
-        <hr>
-        <p>Date: <%= @event.start_time.strftime("%A %d %B %Y") %></p>
-        <p>Start time: <%= @event.start_time.strftime("%H:%M") %></p>
-        <p>End time: <%= @event.end_time.strftime("%H:%M") %></p>
-        <hr>
-      </div>
-      <div class="button-container">
-        <%= link_to "Book", new_event_booking_path(@event), class: "btn btn-primary" %>
-        <%= link_to events_path, class: "btn btn-secondary" do %>
-          <i class="fa-solid fa-chevron-left"></i>
+
+        <p>Hosted by: <%= link_to user_path(@event.user) do %><%= cl_image_tag @event.user.photo.key, class:"avatar", alt: "#{@event.user.first_name}'s profile photo" %>
         <% end %>
+
+        <p>Keywords: #<%= @event.keywords %></p>
+        <hr>
+        <div class="datetime-button-container d-flex">
+          <div class="datetime-container">
+            <p>Date: <%= @event.start_time.strftime("%A %d %B %Y") %></p>
+            <p>Start time: <%= @event.start_time.strftime("%H:%M") %></p>
+            <p>End time: <%= @event.end_time.strftime("%H:%M") %></p>
+          </div>
+          <div class="button-container ms-4">
+            <%= link_to "Book", new_event_booking_path(@event), class: "btn btn-primary" %>
+            <%= link_to events_path, class: "btn btn-secondary" do %>
+              <i class="fa-solid fa-chevron-left"></i> Back to Events
+            <% end %>
+            <% if policy(@event).edit? %>
+              <%= link_to 'Edit Event', edit_event_path(@event), class: "btn btn-" %>
+            <% end %>
+          </div>
+        </div>
       </div>
       <div class="event-goers">
-        <h4> Event-goers </h4>
-        <ul>
-          <% @event.users.each do |user| %>
-            <li id="user-going"><%= user.first_name %></li>
-          <% end %>
-        <ul>
-      <div>
-      <div>
-        <% if policy(@event).edit? %>
-          <%= link_to 'Edit Event', edit_event_path, class: "btn btn-primary" %>
+        <h4 class="text-center">Who's going...</h4>
+        <hr>
+        <% if @event.users.empty? %>
+          <p class="text-center">Be the first to book this event!</p>
+        <% else %>
+          <ul class="no-bullets">
+            <% @event.users.each do |user| %>
+              <li id="user-going">
+                <%= cl_image_tag user.photo.key, width: 50, height: 50, crop: :thumb, alt: "#{user.first_name}'s profile photo" %>
+                <%= user.first_name %>
+              </li>
+            <% end %>
+          </ul>
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="map">
-    <div style="width: 100%; height: 400px;"
-         data-controller="map"
-         data-map-markers-value="<%= @markers.to_json %>"
-         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+
+
   </div>
 </div>
+ <div class="map container mt-5 ">
+      <div style="width: 100%; height: 400px;"
+           data-controller="map"
+           data-map-markers-value="<%= @markers.to_json %>"
+           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
