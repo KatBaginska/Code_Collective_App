@@ -18,39 +18,39 @@ puts "Cleaning up the db"
 puts "Creating users"
 
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1709831209/zbmwwz2glonos4sxxgut.jpg")
-kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456")
+kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456", bio:"I was working as an architect and a few years ago created a website profiling domestic architecture in the UK using Webflow. This peaked my interest in web development and made me want to learn how to code, it has a lot of similarities with architecture. I want to future proof my career by getting into web development as it is still a growing market whereas architecture can be hard when there is a recession on.")
 kate.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://avatars.githubusercontent.com/u/137444157?v=4")
-kat = User.create(username: "Kat", email: "kat@gmail.com", first_name: "Kat", last_name: "Baginska", password: "123456")
+kat = User.create(username: "Kat", email: "kat@gmail.com", first_name: "Kat", last_name: "Baginska", password: "123456", bio:"With a background in tech sales and fashion merchandising, I'm now transitioning into front-end development. Armed with a degree in game design and fueled by passions for design, I'm excited to merge creativity with code to craft engaging digital experiences.")
 kat.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://avatars.githubusercontent.com/u/162709529?v=4")
-koni = User.create(username: "Koni", email: "koni@gmail.com", first_name: "Koni", last_name: "Borowiak", password: "123456")
+koni = User.create(username: "Koni", email: "koni@gmail.com", first_name: "Koni", last_name: "Borowiak", password: "123456", bio:"I'm a recent history of art graduate and have been interested in the tech industry for a while. I thought learning to code would be fun and valuable.")
 koni.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1711361107/s6tpxcvqkupt4j7dndze.jpg")
-alper = User.create(username: "Alper", email: "alper@gmail.com", first_name: "Alper", last_name: "Goldenberg", password: "123456")
+alper = User.create(username: "Alper", email: "alper@gmail.com", first_name: "Alper", last_name: "Goldenberg", password: "123456", bio:"As a London-based professional Photographer and Art Director, I have five years of experience. I aim to learn coding and web development to expand my creative services. Additionally, I aspire to develop web applications for the arts and culture sector.")
 alper.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://pbs.twimg.com/profile_images/1258007290940022784/OGFVpWLz_400x400.png")
-codebar = User.create(username: "Codebar", email: "codebar@codebar.com", first_name: "Codebar", last_name: "ltd", password: "123456")
+codebar = User.create(username: "Codebar", email: "codebar@codebar.com", first_name: "Codebar", last_name: "ltd", password: "123456", bio: "codebar is a charity that facilitates the growth of a diverse tech community by running free regular programming workshops for minority groups in tech. Our goal is to enable minority group members to learn programming in a safe and collaborative environment and expand their career opportunities. To achieve this we run free regular workshops, regular one-off events and try to create opportunities for our students making technology and coding more accessible.")
 codebar.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://cdn.sourceflow.co.uk/va8vj2cd566y6ut4d2y67hnxsveg")
-womenrock = User.create(username: "Women Rock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456")
+womenrock = User.create(username: "Women Rock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456", bio: "Thanks for being here and welcome to Women Rock – a voice for diversity in tech! I’m Alicia, founder of Women Rock, co-founder of SR2, founder of Technology Volunteers organiser of Codebar (phewwww) I’m a positive vibe advocate, lover of constant learning, mushrooms and anything pickled, dislikes pigeons, bad manners and baked beans! Outside of all of that, I’m probably best known for my handstand ability and my almost 10-year tenure as a Tech recruiter in the UK, born and bred in Bristol! ")
 womenrock.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://images.datacamp.com/image/upload/f_auto,q_auto:best/v1603718736/Why_Your_Company_Needs_Python_for_Business_Analytics_xzzles.png")
-thepythongroup = User.create(username: "The Python Group", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456")
+thepythongroup = User.create(username: "The Python Group", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456", bio:"Great software is supported by great people, and Python is no exception. Our user base is enthusiastic and dedicated to spreading use of the language far and wide. Our community can help support the beginner, the expert, and adds to the ever-increasing open-source knowledgebase.")
 thepythongroup.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://www.pngitem.com/pimgs/m/20-207776_transparent-general-assembly-logo-hd-png-download.png")
-generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456")
+generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456", bio:"Since 2011, we’ve helped 100K+ alumni worldwide launch tech careers through our award-winning tech bootcamps, and hundreds of top companies build diverse, scalable tech talent pipelines. As part of the Adecco Group, we create a better world of work for all. We’re all about connections. About closing the global tech skills gap and connecting tech talent with top companies across the globe. We empower learners to chart their own path and businesses to take a fresh approach to discover untapped talent. Led by industry trailblazer CEO Daniele Grassi, we continue to lead the charge for recruiting, training, and placing tech talent — shaping a future of work where everyone can thrive.")
 generalassembly.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://avatars.githubusercontent.com/u/91223087?v=4")
-ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456")
+ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456", bio:"Banker turned full stack developer with the ability to learn new skills quickly and adapt to rapidly changing environments. I am eager to kickstart my web development career in a dynamic company that will expand my learning and build on my development skills.")
 ebi.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 

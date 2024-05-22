@@ -1,0 +1,5 @@
+ # config/meta.yml
+ meta_product_name: "Codeventures"
+ meta_title: "Codeventures - Find you next codeventure. Connect. Code. Collaborate."
+ meta_description: "Join Codeventure to network with fellow developers, attend coding events, and enhance your programming skills. Connect, learn, and grow with a supportive coding community.."
+ meta_image: "logo_white.png" # should exist in `app/assets/images/`

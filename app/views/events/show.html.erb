@@ -1,6 +1,8 @@
 <div class="container mt-5 event-show-container">
+<br>
   <div class="title-container text-center">
-    <h1><%= @event.name %></h1>
+    <%= link_to "⇦", events_path, class: "btn btn-secondary me-3" %>
+    <h1 id="event-heading" class="mb-0"><%= @event.name %></h1>
   </div>
   <br>
   <div class="event-details-card">
@@ -9,12 +11,12 @@
         <div class="carousel-inner">
           <% if @event.photos.present? %>
             <div class="carousel-item active">
-              <%= cl_image_tag @event.photos[0].key, width: 900, height: 500, crop: :fill %>
+              <%= cl_image_tag @event.photos[0].key, width: 1300, height: 500, crop: :fill %>
             </div>
             <% @event.photos.each_with_index do |photo, index| %>
               <% next if index == 0 %>
               <div class="carousel-item">
-                <%= cl_image_tag photo.key, width: 900, height: 500, crop: :fill %>
+                <%= cl_image_tag photo.key, width: 1300, height: 500, crop: :fill %>
               </div>
             <% end %>
           <% else %>
@@ -32,20 +34,35 @@
       </div>
     </div>
 
-    <div class="details-and-goers">
+    <div class="details-and-goers-container d-flex">
       <div class="details">
         <p><%= @event.description %></p>
         <p>Location: <%= @event.location %></p>
-        <p>Hosted by <%= @event.user.username %></p>
+
+        <p>Hosted by: <%= link_to user_path(@event.user) do %><%= cl_image_tag @event.user.photo.key, class:"avatar", alt: "#{@event.user.first_name}'s profile photo" %>
+        <% end %>
+
         <p>Keywords: #<%= @event.keywords %></p>
         <hr>
-        <p>Date: <%= @event.start_time.strftime("%A %d %B %Y") %></p>
-        <p>Start time: <%= @event.start_time.strftime("%H:%M") %></p>
-        <p>End time: <%= @event.end_time.strftime("%H:%M") %></p>
+        <div class="datetime-button-container d-flex">
+          <div class="datetime-container">
+            <p>Date: <%= @event.start_time.strftime("%A %d %B %Y") %></p>
+            <p>Start time: <%= @event.start_time.strftime("%H:%M") %></p>
+            <p>End time: <%= @event.end_time.strftime("%H:%M") %></p>
+          </div>
+          <div class="button-container ms-4">
+            <%= link_to "Book", new_event_booking_path(@event), class: "btn btn-primary" %>
+            <%= link_to events_path, class: "btn btn-secondary" do %>
+              <i class="fa-solid fa-chevron-left"></i> Back to Events
+            <% end %>
+            <% if policy(@event).edit? %>
+              <%= link_to 'Edit Event', edit_event_path(@event), class: "btn btn-" %>
+            <% end %>
+          </div>
+        </div>
       </div>
-
       <div class="event-goers">
-        <h4 class="text-center">Event-goers</h4>
+        <h4 class="text-center">Who's going...</h4>
         <hr>
         <% if @event.users.empty? %>
           <p class="text-center">Be the first to book this event!</p>
@@ -62,15 +79,7 @@
       </div>
     </div>
 
-    <div class="button-container">
-      <%= link_to "Book", new_event_booking_path(@event), class: "btn btn-primary" %>
-      <%= link_to events_path, class: "btn btn-secondary" do %>
-        <i class="fa-solid fa-chevron-left"></i> Back to Events
-      <% end %>
-      <% if policy(@event).edit? %>
-        <%= link_to 'Edit Event', edit_event_path(@event), class: "btn btn-primary" %>
-      <% end %>
-    </div>
+
   </div>
 </div>
  <div class="map container mt-5 ">
