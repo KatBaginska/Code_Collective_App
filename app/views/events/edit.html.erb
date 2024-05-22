@@ -1,6 +1,9 @@
 <div class="container mt-5">
   <div class="edit-event">
-    <h1><%= link_to "⇦", events_path, class: "btn btn-secondary" %>   Edit event listing </h1>
+    <div class="d-flex align-items-center">
+      <%= link_to "⇦", events_path, class: "btn btn-secondary me-3" %>
+      <h1 id="booking-headings" class="mb-0"> Edit event </h1>
+    </div>
       <%= simple_form_for(@event) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>

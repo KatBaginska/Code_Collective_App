@@ -1,6 +1,6 @@
 .chatroom {
   background: black;
-  margin-top: 9px;
+  margin-top: 0;
   padding: 0 75px 0 75px;
   height: calc(100vh - 75px);
   display: flex;
@@ -76,4 +76,5 @@
 
 .container-chatroom {
   background-color: black;
+  margin-top: 50px;
 }

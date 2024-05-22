@@ -169,3 +169,43 @@ h1 {
   border-radius: 50%; /* Makes the marker a circle */
 
 }
+
+// events show page
+
+.details-and-goers-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items at the start of the flex container's cross axis */
+  gap: 20px; /* Space between the details and event-goers */
+  margin-top: 24px;
+}
+
+.details {
+  flex: 1; /* Allows the details section to take available space */
+}
+
+.event-goers {
+  flex: 0 0 300px; /* Fixed width for the event-goers section */
+}
+
+.datetime-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Space between the items */
+  flex-wrap: wrap;
+}
+
+.datetime-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.booking-name {
+  margin-top: 32px;
+}
