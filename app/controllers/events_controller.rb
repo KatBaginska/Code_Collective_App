@@ -2,17 +2,22 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @events = Event.all
+
     if params[:query].present? || params[:tag].present?
       @tags = ActsAsTaggableOn::Tagging.where(taggable_type: "Event").map { |tagging| tagging.tag }.uniq
       @events = Event.tagged_with(params[:tag]) if params[:tag].present? && params[:tags] != [""]
       @events = Event.search_by_details(params[:query]) if params[:query].present? && params[:query] != [""]
+      @upcoming_events = @events.where('date >= ?', Date.new(2024, 6, 22)).order('date ASC')
+      @past_events = @events.where('date < ?', Date.new(2024, 6, 22)).order('date DESC')
       @query = params[:query]
 
     else
-      @events = Event.all
+      @upcoming_events = @events.where('date >= ?', Date.new(2024, 6, 22)).order('date ASC')
+      @past_events = @events.where('date < ?', Date.new(2024, 6, 22)).order('date DESC')
     end
-    #authorize @events
   end
+
   def show
     @event = Event.find(params[:id])
     @chatroom = @event.chatroom
