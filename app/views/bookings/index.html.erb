@@ -1,15 +1,16 @@
 <br>
 <br>
 <div class="card-container container mt-5">
-  <% if @bookings.any? %>
+  <% if @upcoming_bookings.any? %>
     <div>
       <h1 class="your-bookings">Your Events</h1>
       <div class="separator"></div>
       <h5 id="subtitle">Looking forward to seeing you there!</h5>
     </div>
     <div class="cards-events">
-      <% @bookings.each do |booking| %>
-        <div class="event-card">
+      <% @upcoming_bookings.each do |booking| %>
+        <div class="event-card-booking">
+
           <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
@@ -23,4 +24,30 @@
     <p>You have no bookings.</p>
     <%= link_to "Browse events", events_path, class: "btn btn-secondary" %>
   <% end %>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h1 class="your-bookings">Your Events History</h1>
+    <div class="separator"></div>
+    <% if @past_bookings.any? %>
+      <h5 id="subtitle">Hope you enjoyed!</h5>
+      <div class="cards-events">
+        <% @past_bookings.each do |booking| %>
+          <div class="event-card">
+            <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
+              <p class="card-text"><%= booking.event.location %></p>
+              <p class="card-text"><%= booking.event.date.strftime("%d/%m/%Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>Your events history is empty</p>
+      <%= link_to "Browse events", events_path, class: "btn btn-secondary" %>
+    <% end %>
+    </div>
+  </div>
 </div>
