@@ -1,51 +1,66 @@
-<div class="video-container" data-controller="scroll">
-  <video autoplay muted loop>
-    <source src="/videos/matrix.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div data-controller='scroll'>
+  <div class="video-container" data-controller="search">
+    <video autoplay muted loop>
+      <source src="/videos/matrix.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <div class="search-container">
-    <h2 class="search-title">Find Your Next Codeventure!</h2>
-      <%= form_with url: events_path, method: :get, local: true, class: "d-flex" do %>
-      <div class="form-group mb-0">
-        <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control large-search-input" %>
-      </div>
-      <div class="form-group mb-0">
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
+
+    <% if @query || @tags %>
+
     <% end %>
-    <div class="tags-bar mt-3 mb-3 text-center" id="tags-green">
-    <% Event.tag_counts_on(:tags).each do |tag| %>
-      <%= link_to tag.name, events_path(tag: tag.name), class: "btn btn-outline-primary btn tag-button-white mx-1" %>
-    <% end %>
+
+
+
+    <div class="search-container" >
+      <h2 class="search-title">Find Your Next Codeventure!</h2>
+        <%= form_with url: events_path, method: :get, local: true, class: "d-flex", data: { turbo: false } do %>
+        <div class="form-group mb-0">
+          <%= text_field_tag :query, params[:query], placeholder: "Search events...", class: "form-control large-search-input" %>
+        </div>
+        <div class="form-group mb-0">
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <div class="tags-bar mt-3 mb-3 text-center" id="tags-green" >
+      <% Event.tag_counts_on(:tags).each do |tag| %>
+        </li><%= link_to tag.name, events_path(tag: tag.name), class: "btn btn-outline-primary btn tag-button-white mx-1", data: { turbo: false } %>
+      <% end %>
+      </div>
     </div>
   </div>
-</div>
 
 
+  <div data-scroll-target='events'>
+      <% if @query || @tags %>
+        <div class="content-container" data-search-target="events">
+      <% else %>
+        <div class="content-container" data-search-target="events">
+      <% end %>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="mb-0">Upcoming Events</h2>
+          <% if policy(Event).new? %>
+            <%= link_to 'New Event', new_event_path, class: "button-56" %>
+          <% end %>
+        </div>
 
-<div class="content-container" data-target="scroll.container">
-  <div class="d-flex justify-content-between align-items-center">
-    <h2 class="mb-0">Upcoming Events</h2>
-    <% if policy(Event).new? %>
-      <%= link_to 'New Event', new_event_path, class: "button-56" %>
-    <% end %>
-  </div>
-
-  <div class="row row-cols-1 row-cols-md-3 mt-3">
-    <% @events.each do |event| %>
-      <div class="col mb-4">
-        <div class="card event-card">
-          <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" if event.photos.attached? %>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
-            <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
-            <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
-            <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-            <%= link_to "Find out more", event_path(event), class: "button-56" %>
-          </div>
+        <div class="row row-cols-1 row-cols-md-3 mt-3">
+          <% @events.each do |event| %>
+            <div class="col mb-4">
+              <div class="card event-card">
+                <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" if event.photos.attached? %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
+                  <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+                  <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
+                  <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
+                  <%= link_to "Check this event", event_path(event), class: "button-56" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

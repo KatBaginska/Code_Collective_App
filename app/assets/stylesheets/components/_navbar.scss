@@ -1,11 +1,15 @@
 .navbar-lewagon {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   justify-content: space-between;
   background: transparent;
   z-index: 999;
+  transition: background .3s ease;
+  &.solid {
+    background: black;
+  }
 }
 
 .nav-link{
@@ -21,20 +25,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 200px;
+  width: 300px;
   height: 100%;
 }
 
 .sidebar {
   display: flex;
   position: fixed;
-  top: 77px;
+  top: 85px;
   right: 0px;
   width: 250px;
   height: 100vh;
-  background-color: #00ff41;
+  background-color: darkgreen;
   transition: left 0.3s;
   z-index: 1000;
+  padding-top: 20px;
 }
 
 .sidebar.show {
@@ -48,8 +53,8 @@
 
 #burger-menu {
   position: fixed;
-  top: 10px;
-  right: 1px;
+  top: 30px;
+  right: 10px;
   padding: 10px;
   width: 100px;
   height: 100px;
