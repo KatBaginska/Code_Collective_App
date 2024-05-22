@@ -27,7 +27,6 @@
     <h2 id="profile-headings"> My events </h2>
     <%= month_calendar(events: @calendar_events) do |date, events|%>
       <%= date %>
-
       <% events.each do |event| %>
         <div class="event">
           <p><%= event.name %></p>
