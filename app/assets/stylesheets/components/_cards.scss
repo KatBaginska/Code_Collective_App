@@ -6,9 +6,52 @@
 
 .event-details-card {
   display: flex
-
 }
 
 // .details-container {
 //   display: flex;
 // }
+
+.event-show-container {
+  margin-top: 2rem;
+}
+
+.details-and-goers {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.details {
+  flex: 2;
+}
+
+.event-goers{
+  flex: 1;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#user-going {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#user-going img {
+  margin-right: 1rem;
+}
+
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.event-goers{
+  box-shadow: 0 0 8px #0FFF50;
+  padding: 15px;
+}

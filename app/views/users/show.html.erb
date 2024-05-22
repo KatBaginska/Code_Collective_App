@@ -16,9 +16,10 @@
     <div class="col-md-8">
       <h1 class="display-4"><%= @user.username %></h1>
       <p class="lead">Email: <%= @user.email %></p>
-      <% if user_signed_in? && current_user == @user %>
+      <p class="profile"><%= @user.bio %></p>
+      <!--<% if user_signed_in? && current_user == @user %>
         <%= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-primary mt-3' %>
-      <% end %>
+      <% end %>-->
     </div>
   </div>
   <br>
@@ -26,10 +27,10 @@
     <h2 id="profile-headings"> My events </h2>
     <%= month_calendar(events: @calendar_events) do |date, events|%>
       <%= date %>
-
       <% events.each do |event| %>
         <div class="event">
           <p><%= event.name %></p>
+          <br>
         </div>
       <% end %>
     <% end %>

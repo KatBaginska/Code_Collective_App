@@ -1,17 +1,20 @@
 <div class="container mt-5">
-<div class="new-event">
-<h1> <%= link_to "⇦", events_path, class: "btn btn-secondary" %> Add event listing</h1>
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :date, as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :start_time, as: :time %>
-  <%= f.input :end_time,  as: :time  %>
-  <%= f.input :keywords %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "List", class: "btn btn-primary" %>
-<% end %>
-</div>
+  <div class="new-event">
+    <div class="d-flex align-items-center">
+      <%= link_to "⇦", events_path, class: "btn btn-secondary me-3" %>
+      <h1 id="booking-headings" class="mb-0"> Add an event </h1>
+    </div>
+      <%= simple_form_for(@event) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :date, as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :start_time, as: :time %>
+        <%= f.input :end_time,  as: :time  %>
+        <%= f.input :keywords %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>

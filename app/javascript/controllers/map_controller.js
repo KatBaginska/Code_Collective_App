@@ -22,9 +22,12 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map);
+      const el = document.createElement('div');
+      el.className = 'custom-marker';
+
+      new mapboxgl.Marker(el)
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(this.map);
     })
   }
 
