@@ -102,6 +102,8 @@ h5{
   width: 100%;
   height: 100vh;
   margin: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .video-container video {
@@ -118,7 +120,6 @@ h5{
   top: 35%;
   left: 18%;
   right: 18%;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +128,19 @@ h5{
   padding-left: 20px;
   padding-right: 20px;
   padding: 10px;
-  width: 70%;
+  width: 1500px;
+  margin: 0 auto;
+  justify-content: center;
+  z-index: 999;
+
+}
+
+#upcoming{
+  flex-direction: column;
+}
+
+#home-page-headings{
+  align-items: center;
 }
 
 .large-search-input {
@@ -154,8 +167,8 @@ h5{
   width: 100%;
   z-index: 1;
   transition: top 0.5s ease;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .form-group {
@@ -179,6 +192,10 @@ h1 {
   color: white;
 }
 
+.closing-arrow{
+  cursor: pointer;
+}
+
 #booking-page{
   display: block;
 }
@@ -199,7 +216,7 @@ h1 {
 }
 
 .ava-tar{
-  display: flex;
+
 }
 
 // map marker styling
