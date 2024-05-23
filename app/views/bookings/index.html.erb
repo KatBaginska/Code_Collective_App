@@ -15,7 +15,8 @@
           <div class="card-body">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
             <p class="card-text"><%= booking.event.location %></p>
-            <p class="card-text"><%= booking.event.date.strftime("%A %d %B %Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
+            <p class="card-text"><strong>Date:</strong> <%= booking.event.start_time.strftime("%A %d %B %Y") %></p>
+            <p class="card-text"><strong>Time:</strong> <%= booking.event.start_time.strftime("%H:%M") %> - <%= booking.event.end_time.strftime("%H:%M") %></p>
           </div>
           </div>
         </div>
