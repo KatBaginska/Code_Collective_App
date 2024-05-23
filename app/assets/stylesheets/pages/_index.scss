@@ -135,14 +135,6 @@ h5{
 
 }
 
-#upcoming{
-  flex-direction: column;
-}
-
-#home-page-headings{
-  align-items: center;
-}
-
 .large-search-input {
   width: 1120px;
   height: 44px;
@@ -167,8 +159,6 @@ h5{
   width: 100%;
   z-index: 1;
   transition: top 0.5s ease;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 .past-events {
