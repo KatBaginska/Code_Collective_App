@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
     @events = Event.all
@@ -61,6 +61,15 @@ class EventsController < ApplicationController
       redirect_to @event, notice: 'Updated Successfully!'
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @event.user == current_user
+      @event.destroy
+      redirect_to events_path, notice: 'Event was successfully deleted.'
+    else
+      redirect_to events_path, alert: 'You are not authorized to delete this event.'
     end
   end
 
