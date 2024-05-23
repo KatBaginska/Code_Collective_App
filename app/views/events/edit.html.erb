@@ -13,7 +13,8 @@
         <%= f.input :start_time, as: :time %>
         <%= f.input :end_time,  as: :time  %>
         <%= f.input :keywords %>
-        <%= f.submit "List", class: "btn btn-primary" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Edit", class: "btn btn-primary" %>
       <% end %>
   </div>
 </div>

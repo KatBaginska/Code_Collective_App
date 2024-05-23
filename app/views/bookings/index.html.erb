@@ -15,7 +15,7 @@
           <div class="event-card">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
             <p class="card-text"><%= booking.event.location %></p>
-            <p class="card-text"><%= booking.event.date.strftime("%d/%m/%Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
+            <p class="card-text"><%= booking.event.date.strftime("%A %d %B %Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
           </div>
         </div>
       <% end %>
@@ -24,6 +24,9 @@
     <p>You have no bookings.</p>
     <%= link_to "Browse events", events_path, class: "btn btn-secondary" %>
   <% end %>
+  <br>
+  <br>
+  <br>
   <div>
     <h1 class="your-bookings">Your Events History</h1>
     <div class="separator"></div>

@@ -38,12 +38,8 @@
         <div class="content-container" data-search-target="events">
       <% end %>
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="mb-0">Upcoming Events</h2>
-          <% if policy(Event).new? %>
-            <%= link_to 'New Event', new_event_path, class: "button-56" %>
-          <% end %>
+          <h2 id="home-page-headings" class="mb-0">Upcoming Events</h2>
         </div>
-
         <div class="row row-cols-1 row-cols-md-3 mt-3">
           <% @upcoming_events.each do |event| %>
             <div class="col mb-4">
@@ -54,7 +50,7 @@
                   <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
                   <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
                   <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-                  <%= link_to "Check this event", event_path(event), class: "button-56" %>
+                  <%= link_to "Find out more", event_path(event), class: "button-56" %>
                 </div>
               </div>
             </div>
@@ -64,7 +60,7 @@
     </div>
   </div>
   <div>
-    <h2 class="mb-0">Past Events</h2>
+    <h2 id="home-page-headings">Past Events</h2>
      <div class="row row-cols-1 row-cols-md-3 mt-3">
           <% @past_events.each do |event| %>
             <div class="col mb-4">
@@ -75,7 +71,7 @@
                   <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
                   <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
                   <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-                  <%= link_to "Check this event", event_path(event), class: "button-56" %>
+                  <%= link_to "Find out more", event_path(event), class: "button-56" %>
                 </div>
               </div>
             </div>

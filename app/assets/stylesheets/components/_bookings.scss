@@ -2,6 +2,14 @@
   color: white;
 }
 
+h1#booking-headings{
+  font-weight: 900;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
+}
+
+
 .booking-details-container {
   display: flex;
   flex-direction: column;
@@ -34,4 +42,8 @@
 
 .d-flex.align-items-center p:last-child {
   margin-right: 0; /* Remove right margin from the last <p> */
+}
+
+.d-flex.align-items-center {
+  margin-top: 32px;
 }
