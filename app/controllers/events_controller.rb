@@ -8,8 +8,8 @@ class EventsController < ApplicationController
       @tags = ActsAsTaggableOn::Tagging.where(taggable_type: "Event").map { |tagging| tagging.tag }.uniq
       @events = Event.tagged_with(params[:tag]) if params[:tag].present? && params[:tags] != [""]
       @events = Event.search_by_details(params[:query]) if params[:query].present? && params[:query] != [""]
-      @upcoming_events = @events.where('date >= ?', Date.new(2024, 6, 22)).order('date ASC')
-      @past_events = @events.where('date < ?', Date.new(2024, 6, 22)).order('date DESC')
+      @upcoming_events = @events.where('date >= ?', Date.new(2024, 5, 27)).order('date ASC')
+      @past_events = @events.where('date < ?', Date.new(2024, 5, 27)).order('date DESC')
       @query = params[:query]
 
     else
