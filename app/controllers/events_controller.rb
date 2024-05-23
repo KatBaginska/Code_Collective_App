@@ -13,8 +13,8 @@ class EventsController < ApplicationController
       @query = params[:query]
 
     else
-      @upcoming_events = @events.where('date >= ?', Date.new(2024, 6, 22)).order('date ASC')
-      @past_events = @events.where('date < ?', Date.new(2024, 6, 22)).order('date DESC')
+      @upcoming_events = @events.where('date >= ?', Date.new(2024, 5, 24)).order('date ASC')
+      @past_events = @events.where('date < ?', Date.new(2024, 5, 24)).order('date DESC')
     end
   end
 
