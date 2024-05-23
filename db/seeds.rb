@@ -53,6 +53,26 @@ file = URI.open("https://avatars.githubusercontent.com/u/91223087?v=4")
 ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456", bio:"Banker turned full stack developer with the ability to learn new skills quickly and adapt to rapidly changing environments. I am eager to kickstart my web development career in a dynamic company that will expand my learning and build on my development skills.")
 ebi.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
+file = URI.open("https://secure.meetupstatic.com/photos/event/e/3/c/f/clean_520798319.webp")
+creativecoding = User.create(username: "Creative Coding", email: "creativecoding@gmail.com", first_name: "Creativecoding", last_name: "ltd", password: "123456", bio:"If you build for the web, whether just for a hobby or professionally, then this meetup is designed for you. We don't have a specific agenda, but we organize monthly events where we chat about all things web.")
+creativecoding.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://railsgirls.com/images/railsgirls-sq.png")
+railsgirlslondon = User.create(username: "Rails Girls London", email: "railsgirlslondon@gmail.com", first_name: "Railsgirlslondon", last_name: "ltd", password: "123456", bio:"Rails Girls aims to open up technology and make it more approachable for girls and women. Rails for Girls wants to empower girls and women to build the capacity and acquire the tools to conquer the last online frontier. We are a fully non-profit operation - the events are organized together with local sponsors.")
+railsgirlslondon.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://secure.meetupstatic.com/photos/event/2/5/4/0/clean_516549536.webp")
+eastlondontechies = User.create(username: "East London Techies", email: "eastlondontechies@gmail.com", first_name: "Eastlondontechies", last_name: "ltd", password: "123456", bio:"This group is geared towards those of us living in London that are either working with IT / Software or are simply interested in technology. The goal is to offer informal meet-ups where you can:
+  Meet people working in tech / aspiring to be in tech
+  - Get help or input on your project(s)
+  - Learn skills or help others upskill
+  - Socialize.")
+eastlondontechies.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+
+file = URI.open("https://pbcdn1.podbean.com/imglogo/image-logo/862611/2048.png")
+javascript101 = User.create(username: "JavaScript 101", email: "javascript101@gmail.com", first_name: "JavaScript101", last_name: "ltd", password: "123456", bio:"JavaScript 101 is a diverse group of passionate developers, ranging from absolute beginners to seasoned professionals, all united by a common goal: mastering JavaScript. Our members come from various backgrounds and levels of expertise, making our community a rich resource for knowledge exchange and collaboration.")
+javascript101.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+
 
 puts "Created #{User.count} users"
 
@@ -61,7 +81,7 @@ puts "Creating events"
 file = URI.open("https://contentsquare.com/wp-content/uploads/2022/01/2022.01-User-Experience-Workshop-Blog-Image.png")
 file_1 = URI.open("https://www.lionandmason.com/wp-content/uploads/2023/01/amelie-mourichon-wusOJ-2uY6w-unsplash.jpg")
 
-event = Event.new(name: "Introduction to User Experience Design",
+event = Event.new(name: "Introduction to UX Design",
   description: "Whether you've been a developer for years or are just starting out, when you are coding you make micro decisions all the time that can effect the user's experience.
   With this interactive workshop, you'll learn the 'UX cheatsheet' to help make decisions that improve a user's experience. We'll then look at using that cheatsheet to pull apart websites to understand the decisions they've made that have led to a bad user experience. If there's time, we will then put our heads together to see how we could fix those bad experiences.
   Anyone is welcome.",
@@ -85,7 +105,7 @@ event = Event.new(name: "Bootstrap, Beer & BBQ!",
   date: Date.new(2024, 6, 1),
   start_time: DateTime.new(2024, 6, 1, 17),
   end_time: DateTime.new(2024, 6, 1, 20),
-  location: "Constantine Road, London NW3 2LS",
+  location: "98 Constantine Road, London NW3 2LS",
   user_id: ebi.id,
   keywords: "Bootstrap, Web development, CSS, Styling"
 )
@@ -112,6 +132,7 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
+
 file = URI.open("https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/09/09/14/cowomen-zkhksse8tuu-unsplash-1.jpg?crop=8:5,smart&quality=75&auto=webp&width=1024")
 file_1 = URI.open("https://web-static.wrike.com/blog/content/uploads/2018/03/Women_in_Tech_Know_Their_Worth_Its_Time-Everyone_Else_Does_Too_1.jpg?av=461f21a4d35a6149d69602c26a6400d5")
 
@@ -129,6 +150,7 @@ event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
+
 
 file = URI.open("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F719372359%2F269598256309%2F1%2Foriginal.20240314-122707?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C164%2C2000%2C1000&s=436a5355b1ea6b4ed21ad0c644c7bc99")
 file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article18569554.ece/ALTERNATES/s1200/0_DSC_6284-1-copy-3.jpg")
@@ -148,6 +170,7 @@ event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
 event.save
+
 
 file = URI.open("https://secure.meetupstatic.com/photos/event/a/7/d/1/600_518682961.webp?w=384")
 file_1 = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-to-learn-how-to-code-for-free.jpg")
@@ -178,7 +201,7 @@ event = Event.new(name: "Ruby & Brunch",
   start_time: DateTime.new(2024, 8, 10, 9),
   end_time: DateTime.new(2024, 8, 10, 11),
   location: "5-7 Norfolk Street, Cambridge, CB1 2LB",
-  user_id: koni.id,
+  user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
 event.tag_list.add("connect in person", "HTML", "CSS", "JavaScript", "Ruby", "Ruby on rails", "coding", "programming")
@@ -187,6 +210,83 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
-puts "Created #{Event.count} events"
+file = URI.open("https://www.lighthouselabs.ca/uploads/post/open_graph_image/273/45116276_2218202598425836_6193304662867705856_o.jpg")
+file_1 = URI.open("https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/1221541/settings_images/IcBBdC21SdGT572E4ibV_one_on_one_small.png")
 
-puts "Created #{Booking.count} bookings"
+event = Event.new(name: "Code a Game in JavaScript ",
+  description: "Welcome to JavaScript 101, a vibrant community dedicated to helping both new and experienced coders enhance their JavaScript skills. Our group is all about fostering a supportive and engaging environment where everyone can learn, share, and grow together. Learn the basics of JavaScript, an essential programming language for both front-end and back-end development.
+  All levels are welcome! No experience is needed. What you'll learn - Translate logic into coding logic with JavaScript - Program you web version of Rock, Paper, Scissors using JavaScript libraries - Determine the winner using conditional logic.",
+  date: Date.new(2024, 9, 20),
+  start_time: DateTime.new(2024, 9, 20, 19),
+  end_time: DateTime.new(2024, 9, 20, 21),
+  location: "1 Victoria Street, Bristol, BS1 6AA",
+  user_id: javascript101.id,
+  keywords: "JavaScript, workshops, coding, programming"
+)
+event.tag_list.add("JavaScript", "Workshops", "coding", "programming")
+event.photos.attach(io: file, filename: "image.png", content_type: "image/jpg")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/png")
+
+event.save
+
+file = URI.open("https://www.canyonpd.com/app/uploads/2022/03/students-use-tech.png")
+file_1 = URI.open("https://cdn-media-1.freecodecamp.org/images/1*uFINNsYNbYuPIC3sUMyy6w.jpeg")
+
+event = Event.new(name: "Gain productivity with Ruby",
+  description: "Learn the basics of Ruby, an essential programming language for back-end development with many career outcomes. Ruby is an ideal language for beginners due to its user-friendly syntax, and readability. This is a 2-hour workshop, all levels are welcome! No experience is needed. Just prepare your computer.",
+  date: Date.new(2022, 5, 6),
+  start_time: DateTime.new(2022, 5, 6, 9),
+  end_time: DateTime.new(2022, 5, 6, 11),
+  location: "136 George St, London, W1H 5LD",
+  user_id: railsgirlslondon.id,
+  keywords: "connect in person, Ruby, Ruby on rails, coding, programming"
+)
+event.tag_list.add("connect in person", "Ruby", "Ruby on rails", "coding", "programming")
+event.photos.attach(io: file, filename: "image.png", content_type: "image/png")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+file = URI.open("https://www.shutterstock.com/image-photo/young-skilled-programmers-executing-testing-600nw-2358516041.jpg")
+file_1 = URI.open("https://cdn.sanity.io/images/mz2hls6g/production/3e2da842ef9c90c953d1c6b0d03a92699277ec88-5534x3694.jpg?w=3840&q=75&fit=clip&auto=format")
+
+event = Event.new(name: "Creative Coding for Beginners",
+  description: "This course on creative coding is designed specifically for anyone who has never coded before, or feels they need extra support getting started with coding.
+  You'll learn the fundamentals of coding in a fun way - creative visual designs - exploring shape, colour, repetition, randomness, not-so-randomness, recursion & fractals, animation.
+  The course has been developed and tested with new coders over 5 years. The primary aim is to have fun creating and sharing visual designs - and as a painless side effect we'll be learning to code, and gaining understanding of key concepts transferrable to any programming language.",
+  date: Date.new(2023, 7, 21),
+  start_time: DateTime.new(2023, 7, 21, 19),
+  end_time: DateTime.new(2023, 7, 21, 20),
+  location: "30 Cheapside, Brighton, BN1 4GD",
+  user_id: creativecoding.id,
+  keywords: "Learn to code, workshops, coding, programming"
+)
+event.tag_list.add("Learn to code", "Workshops", "coding", "programming")
+event.photos.attach(io: file, filename: "image.png", content_type: "image/jpg")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+file = URI.open("https://www.tribalscale.com/_next/image?url=https%3A%2F%2Ftsweb-assets.s3.amazonaws.com%2Fimages%2FTribalScales_Vision_for_Exponential_Productivity_with_AI_and_Agile_Excellence.webp&w=828&q=75")
+file_1 = URI.open("https://secure.meetupstatic.com/photos/event/3/f/a/b/600_518596299.webp?w=384")
+
+event = Event.new(name: "Monday-Tech/Coding Hangout",
+  description: "Bring your laptop, get a drink and start working on your project in good company. This is a Monday evening event to get a nice, social and productive start to the week.
+  Please note this is a general-purpose tech meet-up. Feel free to join, if you are:
+  - Working on a project / learning about a topic that is tech or tech-adjacent
+  - Keen on getting help / input from, or just socialising with other tech-folk
+  - Nice and respectful of everyone present, regardless of background, chosen tech-stack or current skill-level.",
+  date: Date.new(2023, 10, 16),
+  start_time: DateTime.new(2023, 10, 16, 19),
+  end_time: DateTime.new(2023, 10, 16, 21),
+  location: "81 Great Eastern Street, EC2A 3HU",
+  user_id: eastlondontechies.id,
+  keywords: "UX design, workshops, coding, programming, HTML, CSS, JavaScript"
+)
+event.tag_list.add("Learn to code", "Workshops", "coding", "programming")
+event.photos.attach(io: file, filename: "image.png", content_type: "image/jpg")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+puts "Created #{Event.count} events"
