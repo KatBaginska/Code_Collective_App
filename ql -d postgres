@@ -1,0 +1,17 @@
+   pid   | state | usename |                                                    query                                                    
+---------+-------+---------+-------------------------------------------------------------------------------------------------------------
+ 2261401 | idle  | root    | SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
+ 1501693 | idle  | root    | SELECT a.attname                                                                                           +
+         |       |         |   FROM (                                                                                                   +
+         |       |         |          SELECT indrelid, indkey, generate_subscripts(indkey, 1) idx                                       +
+         |       |         |            FROM pg_index                                                                                   +
+         |       |         |           WHERE indrelid = '"events"'::regclass                                                            +
+         |       |         |             AND indisprimary                                                                               +
+         |       |         |        ) i                                                                                                 +
+         |       |         |   JOIN pg_attribute a                                                                                      +
+         |       |         |     ON a.attrelid = i.indrelid                                                                             +
+         |       |         |    AND a.attnum = i.indkey[i.idx]                                                                          +
+         |       |         |  ORDER BY i.idx                                                                                            +
+         |       |         | 
+(2 rows)
+
