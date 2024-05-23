@@ -31,7 +31,6 @@
 }
 
 .sidebar {
-  display: flex;
   position: fixed;
   top: 35px;
   right: 0px;
@@ -39,7 +38,7 @@
   height: 100vh;
   background-color: darkgreen;
   transition: left 0.3s;
-  z-index: 999;
+  z-index: 1000;
   padding-top: 20px;
 }
 
@@ -59,5 +58,4 @@
   padding: 10px;
   width: 100px;
   height: 100px;
-
 }
