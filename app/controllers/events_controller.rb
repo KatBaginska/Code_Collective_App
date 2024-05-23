@@ -65,8 +65,9 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if @event.user == current_user
-      @event.destroy
+    @event = Event.find(params[:id])
+    authorize @event
+    if @event.destroy
       redirect_to events_path, notice: 'Event was successfully deleted.'
     else
       redirect_to events_path, alert: 'You are not authorized to delete this event.'

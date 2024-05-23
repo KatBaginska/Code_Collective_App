@@ -11,14 +11,17 @@
     </button> %>
 
     <div class="sidebar d-none" data-sidebar-target="menu">
-      <ul class="navbar-nav me-auto" id="sidebar-bits">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <% if current_user.photo.present? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% else %>
-                <img src="default_avatar.png" class="avatar" alt="default avatar">
-            <% end %>
+      <div class="ava-tar">
+       <li><h1><</h1></li>
+        <ul class="navbar-nav me-auto" id="sidebar-bits">
+          <% if user_signed_in? %>
+            <li class="nav-item active">
+              <% if current_user.photo.present? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
+              <% else %>
+                  <img src="default_avatar.png" class="avatar" alt="default avatar">
+              <% end %>
+      </div>
 
           </li>
           <li class="nav-item active">
