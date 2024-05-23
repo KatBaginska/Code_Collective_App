@@ -1,18 +1,18 @@
 <br>
 <br>
-<div class="card-container container mt-5">
+<div class="card-container container mt-5" id="booking-page">
   <% if @upcoming_bookings.any? %>
     <div>
       <h1 class="your-bookings">Your Events</h1>
       <div class="separator"></div>
-      <h5 id="subtitle">Looking forward to seeing you there!</h5>
+      <h5 class="subtitle">Looking forward to seeing you there!</h5>
     </div>
     <div class="cards-events">
       <% @upcoming_bookings.each do |booking| %>
         <div class="event-card-booking">
 
           <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
-          <div class="card-body">
+          <div class="event-card">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
             <p class="card-text"><%= booking.event.location %></p>
             <p class="card-text"><%= booking.event.date.strftime("%d/%m/%Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
@@ -42,7 +42,7 @@
         <% end %>
       </div>
     <% else %>
-      <p>Your events history is empty</p>
+      <h5 class="subtitle">Your events history is empty</h5>
       <%= link_to "Browse events", events_path, class: "btn btn-secondary" %>
     <% end %>
     </div>

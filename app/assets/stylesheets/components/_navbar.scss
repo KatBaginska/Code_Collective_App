@@ -5,7 +5,7 @@
   width: 100%;
   justify-content: space-between;
   background: transparent;
-  z-index: 999;
+  z-index: 1000;
   transition: background .3s ease;
   &.solid {
     background: black;
@@ -27,18 +27,19 @@
 .navbar-lewagon .navbar-brand img {
   width: 300px;
   height: 100%;
+  margin-left: 20px;
 }
 
 .sidebar {
   display: flex;
   position: fixed;
-  top: 85px;
+  top: 35px;
   right: 0px;
   width: 250px;
   height: 100vh;
   background-color: darkgreen;
   transition: left 0.3s;
-  z-index: 1000;
+  z-index: 999;
   padding-top: 20px;
 }
 

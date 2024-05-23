@@ -157,7 +157,7 @@ event = Event.new(name: "Coffee & Code - Saturday",
   date: Date.new(2024, 7, 13),
   start_time: DateTime.new(2024, 7, 13, 9),
   end_time: DateTime.new(2024, 7, 13, 11),
-  location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
+  location: "107 Charing Cross Road, London, WC2H 0EB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
@@ -177,7 +177,7 @@ event = Event.new(name: "Ruby & Brunch",
   date: Date.new(2024, 8, 10),
   start_time: DateTime.new(2024, 8, 10, 9),
   end_time: DateTime.new(2024, 8, 10, 11),
-  location: "Thrive, 5-7 Norfolk Street, Cambridge, CB1 2LB",
+  location: "5-7 Norfolk Street, Cambridge, CB1 2LB",
   user_id: koni.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
