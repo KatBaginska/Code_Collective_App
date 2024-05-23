@@ -60,10 +60,9 @@
       </div>
     </div>
   </div>
-  <div>
-     <% if @past_events.any? %>
-        <div class="row row-cols-1 row-cols-md-3 mt-3">
-          <h2 id="home-page-headings">Past Events</h2>
+  <div class="past-events">
+    <h2 id="home-page-headings">Past Events</h2>
+     <div class="row row-cols-1 row-cols-md-3 mt-3">
           <% @past_events.each do |event| %>
             <div class="col mb-4">
               <div class="card event-card">

@@ -11,26 +11,26 @@
 require "open-uri"
 
 puts "Cleaning up the db"
-# Booking.destroy_all
-# Event.destroy_all
-# User.destroy_all
+Booking.destroy_all
+Event.destroy_all
+User.destroy_all
 
 puts "Creating users"
 
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1709831209/zbmwwz2glonos4sxxgut.jpg")
-kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456", bio:"I was working as an architect and a few years ago created a website profiling domestic architecture in the UK using Webflow. This peaked my interest in web development and made me want to learn how to code, it has a lot of similarities with architecture. I want to future proof my career by getting into web development as it is still a growing market whereas architecture can be hard when there is a recession on.")
+kate = User.create(username: "Kate", email: "kate@gmail.com", first_name: "Kate", last_name: "Coates", password: "123456", bio: "I was working as an architect and a few years ago created a website profiling domestic architecture in the UK using Webflow. This piqued my interest in web development and made me want to learn how to code, it has a lot of similarities with architecture. My architectural background provides a unique perspective and set of skills that I am excited to bring to the field of web development.")
 kate.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://avatars.githubusercontent.com/u/137444157?v=4")
-kat = User.create(username: "Kat", email: "kat@gmail.com", first_name: "Kat", last_name: "Baginska", password: "123456", bio:"With a background in tech sales and fashion merchandising, I'm now transitioning into front-end development. Armed with a degree in game design and fueled by passions for design, I'm excited to merge creativity with code to craft engaging digital experiences.")
+kat = User.create(username: "Kat", email: "kat@gmail.com", first_name: "Kat", last_name: "Baginska", password: "123456", bio: "With a background in tech sales and fashion merchandising, I'm now transitioning into front-end development. Armed with a degree in game design and fueled by passions for design, I'm excited to merge creativity with code to craft engaging digital experiences.")
 kat.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://avatars.githubusercontent.com/u/162709529?v=4")
-koni = User.create(username: "Koni", email: "koni@gmail.com", first_name: "Koni", last_name: "Borowiak", password: "123456", bio:"I'm a recent history of art graduate and have been interested in the tech industry for a while. I thought learning to code would be fun and valuable.")
+koni = User.create(username: "Koni", email: "koni@gmail.com", first_name: "Koni", last_name: "Borowiak", password: "123456", bio: "I'm a recent history of art graduate and have been interested in the tech industry for a while. I thought learning to code would be fun and valuable.")
 koni.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1711361107/s6tpxcvqkupt4j7dndze.jpg")
-alper = User.create(username: "Alper", email: "alper@gmail.com", first_name: "Alper", last_name: "Goldenberg", password: "123456", bio:"As a London-based professional Photographer and Art Director, I have five years of experience. I aim to learn coding and web development to expand my creative services. Additionally, I aspire to develop web applications for the arts and culture sector.")
+alper = User.create(username: "Alper", email: "alper@gmail.com", first_name: "Alper", last_name: "Goldenberg", password: "123456", bio: "As a London-based professional Photographer and Art Director, I have five years of experience. I aim to learn coding and web development to expand my creative services. Additionally, I aspire to develop web applications for the arts and culture sector.")
 alper.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://pbs.twimg.com/profile_images/1258007290940022784/OGFVpWLz_400x400.png")
@@ -38,23 +38,23 @@ codebar = User.create(username: "Codebar", email: "codebar@codebar.com", first_n
 codebar.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://cdn.sourceflow.co.uk/va8vj2cd566y6ut4d2y67hnxsveg")
-womenrock = User.create(username: "Women Rock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456", bio: "Thanks for being here and welcome to Women Rock – a voice for diversity in tech! I’m Alicia, founder of Women Rock, co-founder of SR2, founder of Technology Volunteers organiser of Codebar (phewwww) I’m a positive vibe advocate, lover of constant learning, mushrooms and anything pickled, dislikes pigeons, bad manners and baked beans! Outside of all of that, I’m probably best known for my handstand ability and my almost 10-year tenure as a Tech recruiter in the UK, born and bred in Bristol! ")
+womenrock = User.create(username: "Women Rock", email: "womenrock@gmail.com", first_name: "Womenrock", last_name: "ltd", password: "123456", bio: "Thanks for being here and welcome to Women Rock - a voice for diversity in tech! I'm Alicia, founder of Women Rock, co-founder of SR2, founder of Technology Volunteers organiser of Codebar (phewwww) I'm a positive vibe advocate, lover of constant learning, mushrooms and anything pickled, dislikes pigeons, bad manners and baked beans! Outside of all of that, I'm probably best known for my handstand ability and my almost 10-year tenure as a Tech recruiter in the UK, born and bred in Bristol! ")
 womenrock.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://images.datacamp.com/image/upload/f_auto,q_auto:best/v1603718736/Why_Your_Company_Needs_Python_for_Business_Analytics_xzzles.png")
-thepythongroup = User.create(username: "The Python Group", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456", bio:"Great software is supported by great people, and Python is no exception. Our user base is enthusiastic and dedicated to spreading use of the language far and wide. Our community can help support the beginner, the expert, and adds to the ever-increasing open-source knowledgebase.")
+thepythongroup = User.create(username: "The Python Group", email: "thepythongroup@gmail.com", first_name: "Thepythongroup", last_name: "ltd", password: "123456", bio: "Great software is supported by great people, and Python is no exception. Our user base is enthusiastic and dedicated to spreading use of the language far and wide. Our community can help support the beginner, the expert, and adds to the ever-increasing open-source knowledgebase.")
 thepythongroup.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://www.pngitem.com/pimgs/m/20-207776_transparent-general-assembly-logo-hd-png-download.png")
-generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456", bio:"Since 2011, we’ve helped 100K+ alumni worldwide launch tech careers through our award-winning tech bootcamps, and hundreds of top companies build diverse, scalable tech talent pipelines. As part of the Adecco Group, we create a better world of work for all. We’re all about connections. About closing the global tech skills gap and connecting tech talent with top companies across the globe. We empower learners to chart their own path and businesses to take a fresh approach to discover untapped talent. Led by industry trailblazer CEO Daniele Grassi, we continue to lead the charge for recruiting, training, and placing tech talent — shaping a future of work where everyone can thrive.")
+generalassembly = User.create(username: "General Assembly", email: "generalassembley@gmail.com", first_name: "Generalassembly", last_name: "ltd", password: "123456", bio: "Since 2011, we’ve helped 100K+ alumni worldwide launch tech careers through our award-winning tech bootcamps, and hundreds of top companies build diverse, scalable tech talent pipelines. As part of the Adecco Group, we create a better world of work for all. We're all about connections. About closing the global tech skills gap and connecting tech talent with top companies across the globe. We empower learners to chart their own path and businesses to take a fresh approach to discover untapped talent. Led by industry trailblazer CEO Daniele Grassi, we continue to lead the charge for recruiting, training, and placing tech talent — shaping a future of work where everyone can thrive.")
 generalassembly.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 
 file = URI.open("https://avatars.githubusercontent.com/u/91223087?v=4")
-ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456", bio:"Banker turned full stack developer with the ability to learn new skills quickly and adapt to rapidly changing environments. I am eager to kickstart my web development career in a dynamic company that will expand my learning and build on my development skills.")
+ebi = User.create(username: "Ebi", email: "ebi@gmail.com", first_name: "Ebi", last_name: "Alaibe", password: "123456", bio: "Banker turned full stack developer with the ability to learn new skills quickly and adapt to rapidly changing environments. I am eager to kickstart my web development career in a dynamic company that will expand my learning and build on my development skills.")
 ebi.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://secure.meetupstatic.com/photos/event/e/3/c/f/clean_520798319.webp")
-creativecoding = User.create(username: "Creative Coding", email: "creativecoding@gmail.com", first_name: "Creativecoding", last_name: "ltd", password: "123456", bio:"If you build for the web, whether just for a hobby or professionally, then this meetup is designed for you. We don't have a specific agenda, but we organize monthly events where we chat about all things web.")
+creativecoding = User.create(username: "Creative Coding", email: "creativecoding@gmail.com", first_name: "Creativecoding", last_name: "ltd", password: "123456", bio: "If you build for the web, whether just for a hobby or professionally, then this meetup is designed for you. We don't have a specific agenda, but we organize monthly events where we chat about all things web.")
 creativecoding.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://railsgirls.com/images/railsgirls-sq.png")
@@ -62,22 +62,19 @@ railsgirlslondon = User.create(username: "Rails Girls London", email: "railsgirl
 railsgirlslondon.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://secure.meetupstatic.com/photos/event/2/5/4/0/clean_516549536.webp")
-eastlondontechies = User.create(username: "East London Techies", email: "eastlondontechies@gmail.com", first_name: "Eastlondontechies", last_name: "ltd", password: "123456", bio:"This group is geared towards those of us living in London that are either working with IT / Software or are simply interested in technology. The goal is to offer informal meet-ups where you can:
-  Meet people working in tech / aspiring to be in tech
-  - Get help or input on your project(s)
-  - Learn skills or help others upskill
-  - Socialize.")
+eastlondontechies = User.create(username: "East London Techies", email: "eastlondontechies@gmail.com", first_name: "Eastlondontechies", last_name: "ltd", password: "123456", bio: "This group is geared towards those of us living in London that are either working with IT / Software or are simply interested in technology. The goal is to offer informal meet-ups where you can: Meet people working in tech / aspiring to be in tech - Get help or input on your project(s) - Learn skills or help others upskill - Socialize.")
 eastlondontechies.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://pbcdn1.podbean.com/imglogo/image-logo/862611/2048.png")
-javascript101 = User.create(username: "JavaScript 101", email: "javascript101@gmail.com", first_name: "JavaScript101", last_name: "ltd", password: "123456", bio:"JavaScript 101 is a diverse group of passionate developers, ranging from absolute beginners to seasoned professionals, all united by a common goal: mastering JavaScript. Our members come from various backgrounds and levels of expertise, making our community a rich resource for knowledge exchange and collaboration.")
+javascript101 = User.create(username: "JavaScript 101", email: "javascript101@gmail.com", first_name: "JavaScript", last_name: "101", password: "123456", bio: "JavaScript 101 is a diverse group of passionate developers, ranging from absolute beginners to seasoned professionals, all united by a common goal: mastering JavaScript. Our members come from various backgrounds and levels of expertise, making our community a rich resource for knowledge exchange and collaboartion.")
 javascript101.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-
 
 puts "Created #{User.count} users"
 
 
 puts "Creating events"
+
+
 file = URI.open("https://contentsquare.com/wp-content/uploads/2022/01/2022.01-User-Experience-Workshop-Blog-Image.png")
 file_1 = URI.open("https://www.lionandmason.com/wp-content/uploads/2023/01/amelie-mourichon-wusOJ-2uY6w-unsplash.jpg")
 
@@ -117,7 +114,7 @@ event.save
 file = URI.open("https://thedigitalhacker.com/wp-content/uploads/2020/05/laprop-for-mba.jpg")
 file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3ba8367d0dd41f708c1ce507f8a9571/341020_10150416906821332_1420802082_o.jpg")
 
-event = Event.new(name: "An Evening of Python Coding",
+event = Event.new(name: "An Evening of Python",
   description: "Learners and complete Python novices are welcome as well as experts. If you want to start something new, please see this as an opportunity to jump start the project. If you need help with an existing coding project, bring it with you and we will have a look at it. If you want to show your complete code to someone else to test it, or if you just want to consult with python experts you are welcome.",
   date: Date.new(2024, 5, 28),
   start_time: DateTime.new(2024, 5, 28, 19),
@@ -152,26 +149,6 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 event.save
 
 
-file = URI.open("https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F719372359%2F269598256309%2F1%2Foriginal.20240314-122707?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C164%2C2000%2C1000&s=436a5355b1ea6b4ed21ad0c644c7bc99")
-file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article18569554.ece/ALTERNATES/s1200/0_DSC_6284-1-copy-3.jpg")
-
-event = Event.new(name: "Code with HTML, CSS & JavaScript",
-  description: "Are you thinking about a career in Software Engineering, but don't know where to start? This free, 2-hour workshop will give you a solid understanding of what it takes to be a Web Developer, and how to write your first line of code.
-  In this beginner-friendly session, you will learn from an expert instructor with real world experience. By the end of the session, you will: - Have a better understanding of the coding world and where web development fits in - Become familiar with the basic fundamentals of HTML, CSS and Javascript - Know how to start building a front-end web page on repl.it.",
-  date: Date.new(2024, 6, 22),
-  start_time: DateTime.new(2024, 6, 22, 19),
-  end_time: DateTime.new(2024, 6, 22, 21),
-  location: "Margaret Powell House, Milton Keynes, MK9 3BN",
-  user_id: generalassembly.id,
-  keywords: "HTML, CSS, JavaScript, coding, programming"
-)
-event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
-event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
-event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
-
-event.save
-
-
 file = URI.open("https://secure.meetupstatic.com/photos/event/a/7/d/1/600_518682961.webp?w=384")
 file_1 = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-to-learn-how-to-code-for-free.jpg")
 
@@ -180,17 +157,16 @@ event = Event.new(name: "Coffee & Code - Saturday",
   date: Date.new(2024, 7, 13),
   start_time: DateTime.new(2024, 7, 13, 9),
   end_time: DateTime.new(2024, 7, 13, 11),
-  location: "107 Charing Cross Road, London, WC2H 0EB",
-  user_id: kate.id,
+  location: "107 Charing Cross Rd, London, WC2H 0EB",
+  user_id: alper.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
 event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
 event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
-
 event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
 
-
 event.save
+
 
 file = URI.open("https://www.explore-group.com/storage/images-processed/w-1500_h-auto_m-fit_s-any__highres_464010407.jpeg")
 file_1 = URI.open("https://app.codesmith.io/cba42abf0cb26842d7d9.jpg")
@@ -200,7 +176,7 @@ event = Event.new(name: "Ruby & Brunch",
   date: Date.new(2024, 8, 10),
   start_time: DateTime.new(2024, 8, 10, 9),
   end_time: DateTime.new(2024, 8, 10, 11),
-  location: "5-7 Norfolk Street, Cambridge, CB1 2LB",
+  location: "5-7 Norfolk St, Cambridge, CB1 2LB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
@@ -250,7 +226,7 @@ event.save
 file = URI.open("https://www.shutterstock.com/image-photo/young-skilled-programmers-executing-testing-600nw-2358516041.jpg")
 file_1 = URI.open("https://cdn.sanity.io/images/mz2hls6g/production/3e2da842ef9c90c953d1c6b0d03a92699277ec88-5534x3694.jpg?w=3840&q=75&fit=clip&auto=format")
 
-event = Event.new(name: "Creative Coding for Beginners",
+event = Event.new(name: "Creative Coding",
   description: "This course on creative coding is designed specifically for anyone who has never coded before, or feels they need extra support getting started with coding.
   You'll learn the fundamentals of coding in a fun way - creative visual designs - exploring shape, colour, repetition, randomness, not-so-randomness, recursion & fractals, animation.
   The course has been developed and tested with new coders over 5 years. The primary aim is to have fun creating and sharing visual designs - and as a painless side effect we'll be learning to code, and gaining understanding of key concepts transferrable to any programming language.",
@@ -270,7 +246,7 @@ event.save
 file = URI.open("https://www.tribalscale.com/_next/image?url=https%3A%2F%2Ftsweb-assets.s3.amazonaws.com%2Fimages%2FTribalScales_Vision_for_Exponential_Productivity_with_AI_and_Agile_Excellence.webp&w=828&q=75")
 file_1 = URI.open("https://secure.meetupstatic.com/photos/event/3/f/a/b/600_518596299.webp?w=384")
 
-event = Event.new(name: "Monday-Tech/Coding Hangout",
+event = Event.new(name: "Monday Coding Hangout",
   description: "Bring your laptop, get a drink and start working on your project in good company. This is a Monday evening event to get a nice, social and productive start to the week.
   Please note this is a general-purpose tech meet-up. Feel free to join, if you are:
   - Working on a project / learning about a topic that is tech or tech-adjacent
@@ -289,4 +265,34 @@ event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg"
 
 event.save
 
+file = URI.open("https://www.welcometobath.co.uk/wp-content/uploads/2024/03/https___cdn.evbuc_.com_images_719372359_269598256309_1_original.jpeg")
+file_1 = URI.open("https://i2-prod.manchestereveningnews.co.uk/incoming/article18569554.ece/ALTERNATES/s1200/0_DSC_6284-1-copy-3.jpg")
+
+event = Event.new(name: "Code with HTML, CSS & JavaScript",
+  description: "Are you thinking about a career in Software Engineering, but don't know where to start? This free, 2-hour workshop will give you a solid understanding of what it takes to be a Web Developer, and how to write your first line of code. In this beginner-friendly session, you will learn from an expert instructor with real world experience. By the end of the session, you will: - Have a better understanding of the coding world and where web development fits in - Become familiar with the basic fundamentals of HTML, CSS and Javascript - Know how to start building a front-end web page on repl.it.",
+  date: Date.new(2024, 6, 20),
+  start_time: DateTime.new(2024, 6, 20, 19),
+  end_time: DateTime.new(2024, 6, 20, 21),
+  location: "Margaret Powell House, Milton Keynes, MK9 3BN",
+  user_id: generalassembly.id,
+  keywords: "HTML, CSS, JavaScript, coding, programming"
+)
+event.tag_list.add("HTML", "CSS", "JavaScript", "coding", "programming")
+event.photos.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
+event.photos.attach(io: file_1, filename: "image.jpg", content_type: "image/jpg")
+
+event.save
+
+
 puts "Created #{Event.count} events"
+
+users = User.all
+events = Event.all
+
+events.each do |event|
+  users.sample(rand(1..2)).each do |user|
+    Booking.create(event_id: event.id, user_id: user.id)
+  end
+end
+
+puts "Created #{Booking.count} bookings"
