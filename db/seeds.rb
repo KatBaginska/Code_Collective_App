@@ -64,9 +64,9 @@ railsgirlslondon.photo.attach(io: file, filename: "image.jpg", content_type: "im
 file = URI.open("https://secure.meetupstatic.com/photos/event/2/5/4/0/clean_516549536.webp")
 eastlondontechies = User.create(username: "East London Techies", email: "eastlondontechies@gmail.com", first_name: "Eastlondontechies", last_name: "ltd", password: "123456", bio:"This group is geared towards those of us living in London that are either working with IT / Software or are simply interested in technology. The goal is to offer informal meet-ups where you can:
   Meet people working in tech / aspiring to be in tech
-  Get help or input on your project(s)
-  Learn skills or help others upskill
-  Socialize.")
+  - Get help or input on your project(s)
+  - Learn skills or help others upskill
+  - Socialize.")
 eastlondontechies.photo.attach(io: file, filename: "image.jpg", content_type: "image/jpg")
 
 file = URI.open("https://pbcdn1.podbean.com/imglogo/image-logo/862611/2048.png")
@@ -81,7 +81,7 @@ puts "Creating events"
 file = URI.open("https://contentsquare.com/wp-content/uploads/2022/01/2022.01-User-Experience-Workshop-Blog-Image.png")
 file_1 = URI.open("https://www.lionandmason.com/wp-content/uploads/2023/01/amelie-mourichon-wusOJ-2uY6w-unsplash.jpg")
 
-event = Event.new(name: "Introduction to User Experience Design",
+event = Event.new(name: "Introduction to UX Design",
   description: "Whether you've been a developer for years or are just starting out, when you are coding you make micro decisions all the time that can effect the user's experience.
   With this interactive workshop, you'll learn the 'UX cheatsheet' to help make decisions that improve a user's experience. We'll then look at using that cheatsheet to pull apart websites to understand the decisions they've made that have led to a bad user experience. If there's time, we will then put our heads together to see how we could fix those bad experiences.
   Anyone is welcome.",
@@ -105,7 +105,7 @@ event = Event.new(name: "Bootstrap, Beer & BBQ!",
   date: Date.new(2024, 6, 1),
   start_time: DateTime.new(2024, 6, 1, 17),
   end_time: DateTime.new(2024, 6, 1, 20),
-  location: "Constantine Road, London NW3 2LS",
+  location: "98 Constantine Road, London NW3 2LS",
   user_id: ebi.id,
   keywords: "Bootstrap, Web development, CSS, Styling"
 )
@@ -180,7 +180,7 @@ event = Event.new(name: "Coffee & Code - Saturday",
   date: Date.new(2024, 7, 13),
   start_time: DateTime.new(2024, 7, 13, 9),
   end_time: DateTime.new(2024, 7, 13, 11),
-  location: "Foyles, 107 Charing Cross Road, London, WC2H 0EB",
+  location: "107 Charing Cross Road, London, WC2H 0EB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
 )
@@ -200,7 +200,7 @@ event = Event.new(name: "Ruby & Brunch",
   date: Date.new(2024, 8, 10),
   start_time: DateTime.new(2024, 8, 10, 9),
   end_time: DateTime.new(2024, 8, 10, 11),
-  location: "Thrive, 5-7 Norfolk Street, Cambridge, CB1 2LB",
+  location: "5-7 Norfolk Street, Cambridge, CB1 2LB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
 )
@@ -250,7 +250,7 @@ event.save
 file = URI.open("https://www.shutterstock.com/image-photo/young-skilled-programmers-executing-testing-600nw-2358516041.jpg")
 file_1 = URI.open("https://cdn.sanity.io/images/mz2hls6g/production/3e2da842ef9c90c953d1c6b0d03a92699277ec88-5534x3694.jpg?w=3840&q=75&fit=clip&auto=format")
 
-event = Event.new(name: "Creative Coding for Complete Beginners",
+event = Event.new(name: "Creative Coding for Beginners",
   description: "This course on creative coding is designed specifically for anyone who has never coded before, or feels they need extra support getting started with coding.
   You'll learn the fundamentals of coding in a fun way - creative visual designs - exploring shape, colour, repetition, randomness, not-so-randomness, recursion & fractals, animation.
   The course has been developed and tested with new coders over 5 years. The primary aim is to have fun creating and sharing visual designs - and as a painless side effect we'll be learning to code, and gaining understanding of key concepts transferrable to any programming language.",
@@ -279,7 +279,7 @@ event = Event.new(name: "Monday-Tech/Coding Hangout",
   date: Date.new(2023, 10, 16),
   start_time: DateTime.new(2023, 10, 16, 19),
   end_time: DateTime.new(2023, 10, 16, 21),
-  location: "The Hoxton, 81 Great Eastern Street, EC2A 3HU",
+  location: "81 Great Eastern Street, EC2A 3HU",
   user_id: eastlondontechies.id,
   keywords: "UX design, workshops, coding, programming, HTML, CSS, JavaScript"
 )
