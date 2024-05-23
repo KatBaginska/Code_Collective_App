@@ -39,7 +39,7 @@
       <% end %>
         <div class="past-events">
         <% if @upcoming_events.any? %>
-        <h2 id="home-page-headings">Upcoming Events</h2>
+          <h2 id="home-page-headings">Upcoming Events</h2>
           <div class="row row-cols-1 row-cols-md-3 mt-3">
             <% @upcoming_events.each do |event| %>
               <div class="col mb-4">
@@ -59,26 +59,26 @@
       </div>
     </div>
   </div>
+
   <div class="past-events">
-    <h2 id="home-page-headings">Past Events</h2>
-     <div class="row row-cols-1 row-cols-md-3 mt-3">
-          <% @past_events.each do |event| %>
-            <div class="col mb-4">
-              <div class="card event-card">
-                <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" if event.photos.attached? %>
-                <div class="card-body">
-                  <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
-                  <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
-                  <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
-                  <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-                  <%= link_to "Find out more", event_path(event), class: "button-56" %>
-                </div>
+    <% if @past_events.any? %>
+      <h2 id="home-page-headings">Past Events</h2>
+      <div class="row row-cols-1 row-cols-md-3 mt-3">
+        <% @past_events.each do |event| %>
+          <div class="col mb-4">
+            <div class="card event-card">
+              <%= cl_image_tag event.photos.first.key, class: "card-img-top castle-image" if event.photos.attached? %>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to event.name, event_path(event), class: "event-link" %></h5>
+                <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
+                <p class="card-text"><strong>Date:</strong> <%= event.start_time.strftime("%A %d %B %Y") %></p>
+                <p class="card-text"><strong>Time:</strong> <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
+                <%= link_to "Find out more", event_path(event), class: "button-56" %>
               </div>
             </div>
-          <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
       </div>
-
+    <% end %>
   </div>
 </div>
