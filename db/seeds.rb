@@ -11,9 +11,9 @@
 require "open-uri"
 
 puts "Cleaning up the db"
-# Booking.destroy_all
-# Event.destroy_all
-# User.destroy_all
+Booking.destroy_all
+Event.destroy_all
+User.destroy_all
 
 puts "Creating users"
 
