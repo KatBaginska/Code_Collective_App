@@ -139,7 +139,7 @@ h5{
   width: 1120px;
   height: 44px;
   font-size: 16px; /* Optional: to make the text size larger */
-
+  font-family: 'oswald';
 }
 
 .tag-button-white {
@@ -147,6 +147,7 @@ h5{
   color: darkgreen;
   border-color: white;
   margin: 10px;
+  font-family: 'oswald';
 }
 
 .tag-button-white:hover {
@@ -190,6 +191,10 @@ h1 {
 
 .closing-arrow{
   cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-family: 'Oswald';
+  font-size: 50px;
 }
 
 #booking-page{
@@ -211,19 +216,48 @@ h1 {
   color: white;
 }
 
+.side-list{
+  font-family: 'Oswald';
+  font-size: 30px;
+  text-decoration: none;
+  text-align: right;
+  margin-right: 20px;
+  list-style-type: none;
+}
+
+.ava-tar{
+  display: flex;
+}
+
+ul{
+  list-style-type: none;
+
 .your-bookings h1 {
   padding: 0;
 }
 
+
 // map marker styling
 
 .custom-marker {
-
   background-color: #00FF00; /* Green color */
   width: 25px; /* Adjust the width as needed */
   height: 25px; /* Adjust the height as needed */
   border-radius: 50%; /* Makes the marker a circle */
+}
 
+#search-button{
+  background-color: darkgreen;
+  font-family: 'oswald';
+  color: white;
+  width: 100px;
+  border-radius: 2px;
+}
+
+#search-button:hover{
+  background-color: white;
+  color: darkgreen;
+  border: 1px solid darkgreen;
 }
 
 // events show page
