@@ -231,18 +231,19 @@ h1 {
 
 ul{
   list-style-type: none;
+
+.your-bookings h1 {
+  padding: 0;
 }
 
 
 // map marker styling
 
 .custom-marker {
-
   background-color: #00FF00; /* Green color */
   width: 25px; /* Adjust the width as needed */
   height: 25px; /* Adjust the height as needed */
   border-radius: 50%; /* Makes the marker a circle */
-
 }
 
 #search-button{

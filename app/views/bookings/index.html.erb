@@ -11,11 +11,12 @@
       <% @upcoming_bookings.each do |booking| %>
       <div class="col mb-4">
         <div class="card event-card">
-          <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
+          <%= cl_image_tag booking.event.photos[0].key, class: "card-img-top castle-image" %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
-            <p class="card-text"><%= booking.event.location %></p>
-            <p class="card-text"><%= booking.event.date.strftime("%A %d %B %Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
+            <p class="card-text"><strong>Location:</strong> <%= booking.event.location %></p>
+            <p class="card-text"><strong>Date:</strong> <%= booking.event.start_time.strftime("%A %d %B %Y") %></p>
+            <p class="card-text"><strong>Time:</strong> <%= booking.event.start_time.strftime("%H:%M") %> - <%= booking.event.end_time.strftime("%H:%M") %></p>
           </div>
           </div>
         </div>
@@ -33,16 +34,19 @@
     <div class="separator"></div>
     <% if @past_bookings.any? %>
       <h5 class="subtitle">Hope you enjoyed the event!</h5>
-      <div class="cards-events">
+      <div class="row row-cols-1 row-cols-md-3 mt-3">
         <% @past_bookings.each do |booking| %>
-          <div class="event-card">
+        <div class="col mb-4">
+          <div class="card event-card">
             <%= cl_image_tag booking.event.photos[0].key, height: 250, crop: :fill, class: "castle-image" %>
             <div class="card-body">
               <h5 class="card-title"><%= link_to booking.event.name, booking_path(booking), class: "event-link" %></h5>
-              <p class="card-text"><%= booking.event.location %></p>
-              <p class="card-text"><%= booking.event.date.strftime("%d/%m/%Y") %> | <%= booking.event.start_time.strftime("%H:%M") %></p>
+              <p class="card-text"><strong>Location:</strong> <%= booking.event.location %></p>
+              <p class="card-text"><strong>Date:</strong> <%= booking.event.start_time.strftime("%A %d %B %Y") %></p>
+              <p class="card-text"><strong>Time:</strong> <%= booking.event.start_time.strftime("%H:%M") %> - <%= booking.event.end_time.strftime("%H:%M") %></p>
             </div>
           </div>
+        </div>
         <% end %>
       </div>
     <% else %>

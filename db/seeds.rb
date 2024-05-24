@@ -85,7 +85,7 @@ event = Event.new(name: "Introduction to UX Design",
   date: Date.new(2024, 8, 2),
   start_time: DateTime.new(2024, 8, 2, 18),
   end_time: DateTime.new(2024, 8, 2, 20),
-  location: "Kiln House, Norwich, NR2 1DX",
+  location: "Kiln House, Pottergate, Norwich, NR2 1DX",
   user_id: codebar.id,
   keywords: "UX design, Web development, User experience"
 )
@@ -102,7 +102,7 @@ event = Event.new(name: "Bootstrap, Beer & BBQ!",
   date: Date.new(2024, 6, 1),
   start_time: DateTime.new(2024, 6, 1, 17),
   end_time: DateTime.new(2024, 6, 1, 20),
-  location: "98 Constantine Road, London NW3 2LS",
+  location: "98 Constantine Rd, London NW3 2LS",
   user_id: ebi.id,
   keywords: "Bootstrap, Web development, CSS, Styling"
 )
