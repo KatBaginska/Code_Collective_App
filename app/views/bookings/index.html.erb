@@ -1,6 +1,9 @@
 <br>
 <br>
-<div class="card-container container mt-5" id="booking-page">
+<br>
+<br>
+<div class="content-container">
+<div class="past-events">
   <% if @upcoming_bookings.any? %>
     <div>
       <h1 class="your-bookings">Your Events</h1>
@@ -54,5 +57,6 @@
       <%= link_to "Browse events", events_path, class: "btn btn-secondary" %>
     <% end %>
     </div>
+  </div>
   </div>
 </div>
