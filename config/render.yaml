@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-rails-app
+    env: ruby
+    buildCommand:
+      bundle install &&
+      yarn install &&
+      RAILS_ENV=production bundle exec rake assets:precompile
+    startCommand: bundle exec rails server -b 0.0.0.0
+    publish:
+      path: ./public
