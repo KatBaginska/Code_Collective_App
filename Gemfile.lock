@@ -173,6 +173,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    memory_profiler (1.0.2)
     mini_mime (1.1.5)
     minitest (5.23.0)
     msgpack (1.7.2)
@@ -344,6 +345,7 @@ DEPENDENCIES
   geocoder
   importmap-rails (~> 1.2.3)
   jbuilder
+  memory_profiler
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)

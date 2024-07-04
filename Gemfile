@@ -84,3 +84,5 @@ end
 gem "pundit"
 gem "devise"
 gem "geocoder"
+
+gem 'memory_profiler'
