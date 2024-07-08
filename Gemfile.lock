@@ -182,6 +182,11 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.2)
+    libv8-node (21.7.2.0)
+    libv8-node (21.7.2.0-aarch64-linux)
+    libv8-node (21.7.2.0-arm64-darwin)
+    libv8-node (21.7.2.0-x86_64-darwin)
+    libv8-node (21.7.2.0-x86_64-linux)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -194,6 +199,8 @@ GEM
     matrix (0.4.2)
     memory_profiler (1.0.2)
     mini_mime (1.1.5)
+    mini_racer (0.12.0)
+      libv8-node (~> 21.7.2.0)
     minitest (5.23.0)
     msgpack (1.7.2)
     multipart-post (2.4.1)
@@ -367,6 +374,7 @@ DEPENDENCIES
   importmap-rails (~> 1.2.3)
   jbuilder
   memory_profiler
+  mini_racer
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)
