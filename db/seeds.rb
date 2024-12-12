@@ -82,9 +82,9 @@ event = Event.new(name: "Introduction to UX Design",
   description: "Whether you've been a developer for years or are just starting out, when you are coding you make micro decisions all the time that can effect the user's experience.
   With this interactive workshop, you'll learn the 'UX cheatsheet' to help make decisions that improve a user's experience. We'll then look at using that cheatsheet to pull apart websites to understand the decisions they've made that have led to a bad user experience. If there's time, we will then put our heads together to see how we could fix those bad experiences.
   Anyone is welcome.",
-  date: Date.new(2024, 8, 2),
-  start_time: DateTime.new(2024, 8, 2, 18),
-  end_time: DateTime.new(2024, 8, 2, 20),
+  date: Date.new(2024, 12, 22),
+  start_time: DateTime.new(2024, 12, 22, 18),
+  end_time: DateTime.new(2024, 12, 22, 20),
   location: "Kiln House, Pottergate, Norwich, NR2 1DX",
   user_id: codebar.id,
   keywords: "UX design, Web development, User experience"
@@ -99,9 +99,9 @@ file = URI.open("https://www.sunset.com/wp-content/uploads/burger-at-tailgate-pa
 
 event = Event.new(name: "Bootstrap, Beer & BBQ!",
   description: "Is Bootstrap getting you down? Do you need to meet people you can talk things through with, discuss projects or just have a moan over how hard coding can be? Then you are welcome to come and join us for an informal gathering of like-minded people to talk through ideas, get some tips and advice and maybe help someone out too!",
-  date: Date.new(2024, 6, 1),
-  start_time: DateTime.new(2024, 6, 1, 17),
-  end_time: DateTime.new(2024, 6, 1, 20),
+  date: Date.new(2025, 1, 18),
+  start_time: DateTime.new(2025, 1, 18, 17),
+  end_time: DateTime.new(2025, 1, 18, 20),
   location: "98 Constantine Rd, London NW3 2LS",
   user_id: ebi.id,
   keywords: "Bootstrap, Web development, CSS, Styling"
@@ -116,9 +116,9 @@ file_1 = URI.open("https://f2.codeday.org/d5pti1xheuyu/6waD5CFOnOKwJX8UqA73wL/c3
 
 event = Event.new(name: "An Evening of Python",
   description: "Learners and complete Python novices are welcome as well as experts. If you want to start something new, please see this as an opportunity to jump start the project. If you need help with an existing coding project, bring it with you and we will have a look at it. If you want to show your complete code to someone else to test it, or if you just want to consult with python experts you are welcome.",
-  date: Date.new(2024, 5, 28),
-  start_time: DateTime.new(2024, 5, 28, 19),
-  end_time: DateTime.new(2024, 5, 28, 21),
+  date: Date.new(2025, 2, 5),
+  start_time: DateTime.new(2025, 2, 5, 19),
+  end_time: DateTime.new(2025, 2, 5, 21),
   location: "10 South Pl, London EC2M 7EB",
   user_id: thepythongroup.id,
   keywords: "Python, Web development"
@@ -135,9 +135,9 @@ file_1 = URI.open("https://web-static.wrike.com/blog/content/uploads/2018/03/Wom
 
 event = Event.new(name: "Coding Workshop at SR2",
   description: "Women Rock is a voice for diversity in tech. Attend our workshops to learn programming in a safe and supportive environment at your own pace, or to share your knowledge and coach our students. Women Rock was created by SR2 co-founder and all-round positive vibe advocate Alicia and exists to help transform the industry and create a positive movement! Please join us for an in-person workshop hosted at Runway East (1 Victoria Street, Bristol, BS1 6AA) There will be someone to let you in at reception and please make your way to floor 1. The building is fully accessible. Any issues on the evening please message us on slack. Food and drink will be provided with vegan, veggie and GF options available.",
-  date: Date.new(2024, 6, 6),
-  start_time: DateTime.new(2024, 6, 6, 18),
-  end_time: DateTime.new(2024, 6, 6, 21),
+  date: Date.new(2025, 2, 14),
+  start_time: DateTime.new(2025, 2, 14, 18),
+  end_time: DateTime.new(2025, 2, 14, 21),
   location: "1 Victoria Street, Bristol, BS1 6AA",
   user_id: womenrock.id,
   keywords: "coding, programming, Women in tech"
@@ -154,9 +154,9 @@ file_1 = URI.open("https://bootcamprankings.com/wp-content/uploads/2021/08/how-t
 
 event = Event.new(name: "Coffee & Code - Saturday",
   description: "Bring your laptop, get a brew and start working on your project in good company. This is an event for Saturday morning early-birds who like a productive and social start to the weekend. Please note this is a general-purpose tech meet-up. Feel free to join, if you are:- Working on a project / learning about a topic that is tech or tech-adjacent- Keen on getting help / input from, or just socialising with other tech-folk. Nice and respectful of everyone present, regardless of background, chosen tech-stack or current skill-level.",
-  date: Date.new(2024, 7, 13),
-  start_time: DateTime.new(2024, 7, 13, 9),
-  end_time: DateTime.new(2024, 7, 13, 11),
+  date: Date.new(2025, 2, 22),
+  start_time: DateTime.new(2025, 2, 22, 9),
+  end_time: DateTime.new(2025, 2, 22, 11),
   location: "107 Charing Cross Rd, London, WC2H 0EB",
   user_id: alper.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, coding, programming"
@@ -173,9 +173,9 @@ file_1 = URI.open("https://app.codesmith.io/cba42abf0cb26842d7d9.jpg")
 
 event = Event.new(name: "Ruby & Brunch",
   description: "Whether you are a complete novice or a programming master there is always more to learn. With Ruby & Brunch you can read that great programming book, work on that revolutionary project, or learn that cool new language with good food, a drink and fellow programmers to talk through ideas. We range from Ruby users through to HTML, CSS and JavaScript, whatever you want to talk about we are here to connect with you.",
-  date: Date.new(2024, 8, 10),
-  start_time: DateTime.new(2024, 8, 10, 9),
-  end_time: DateTime.new(2024, 8, 10, 11),
+  date: Date.new(2025, 2, 25),
+  start_time: DateTime.new(2025, 2, 25, 9),
+  end_time: DateTime.new(2025, 2, 25, 11),
   location: "5-7 Norfolk St, Cambridge, CB1 2LB",
   user_id: kate.id,
   keywords: "connect in person, HTML, CSS, JavaScript, Ruby, Ruby on rails, coding, programming"
@@ -192,9 +192,9 @@ file_1 = URI.open("https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-s
 event = Event.new(name: "Code a Game in JavaScript ",
   description: "Welcome to JavaScript 101, a vibrant community dedicated to helping both new and experienced coders enhance their JavaScript skills. Our group is all about fostering a supportive and engaging environment where everyone can learn, share, and grow together. Learn the basics of JavaScript, an essential programming language for both front-end and back-end development.
   All levels are welcome! No experience is needed. What you'll learn - Translate logic into coding logic with JavaScript - Program you web version of Rock, Paper, Scissors using JavaScript libraries - Determine the winner using conditional logic.",
-  date: Date.new(2024, 9, 20),
-  start_time: DateTime.new(2024, 9, 20, 19),
-  end_time: DateTime.new(2024, 9, 20, 21),
+  date: Date.new(2025, 3, 5),
+  start_time: DateTime.new(2025, 3, 5, 19),
+  end_time: DateTime.new(2025, 3, 5, 21),
   location: "1 Victoria Street, Bristol, BS1 6AA",
   user_id: javascript101.id,
   keywords: "JavaScript, workshops, coding, programming"
